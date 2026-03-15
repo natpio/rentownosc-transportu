@@ -5,140 +5,124 @@ import requests
 import base64
 
 # =========================================================
-# KONFIGURACJA GITHUB - POBIERANA Z SECRETS
+# KONFIGURACJA GITHUB
 # =========================================================
-# Token pobierany bezpiecznie z ustawień Streamlit (nie z kodu)
 try:
     GITHUB_TOKEN = st.secrets["G_TOKEN"]
 except:
-    GITHUB_TOKEN = "BRAK_TOKENA"
+    GITHUB_TOKEN = "BRAK"
 
 REPO_OWNER = "natpio"
 REPO_NAME = "rentownosc-transportu"
 FILE_PATH = "config.json"
-ADMIN_PASSWORD = "SQM2026"
+ADMIN_PASSWORD = "admin" # Możesz zmienić na swoje
 
 # =========================================================
-# FUNKCJE DO OBSŁUGI DANYCH
+# FUNKCJE OPERACYJNE
 # =========================================================
 
 def get_github_data():
-    """Pobiera plik config.json z GitHub."""
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     response = requests.get(url, headers=headers)
-    
     if response.status_code == 200:
         content = response.json()
-        decoded_content = base64.b64decode(content['content']).decode('utf-8')
-        return json.loads(decoded_content), content['sha']
-    else:
-        # Wyświetlamy pomocny komunikat w zależności od błędu
-        if response.status_code == 401:
-            st.error("Błąd 401: Token w 'Secrets' jest nieprawidłowy lub wygasł.")
-        elif response.status_code == 404:
-            st.error(f"Błąd 404: Nie znaleziono pliku {FILE_PATH} w repozytorium.")
-        else:
-            st.error(f"Błąd: {response.status_code}. Sprawdź konfigurację.")
-        return None, None
+        decoded = base64.b64decode(content['content']).decode('utf-8')
+        return json.loads(decoded), content['sha']
+    return None, None
 
 def update_github_data(new_data, sha):
-    """Zapisuje zaktualizowany plik config.json na GitHub."""
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    
     updated_content = json.dumps(new_data, indent=4, ensure_ascii=False)
-    encoded_content = base64.b64encode(updated_content.encode('utf-8')).decode('utf-8')
-    
-    payload = {
-        "message": "Aktualizacja parametrów transportu",
-        "content": encoded_content,
-        "sha": sha
-    }
-    
-    response = requests.put(url, headers=headers, json=payload)
-    return response.status_code in [200, 201]
+    encoded = base64.b64encode(updated_content.encode('utf-8')).decode('utf-8')
+    payload = {"message": "Update logistyka", "content": encoded, "sha": sha}
+    res = requests.put(url, headers=headers, json=payload)
+    return res.status_code in [200, 201]
 
 # =========================================================
-# INTERFEJS UŻYTKOWNIKA - STREAMLIT
+# INTERFEJS
 # =========================================================
 
-st.set_page_config(page_title="Kalkulator Transportowy", layout="wide", page_icon="🚚")
-st.title("🚚 Kalkulator Transportowy")
+st.set_page_config(page_title="Kalkulator Transportowy", layout="wide")
+st.title("🚛 Kalkulator Kosztów Transportu")
 
-# Próba pobrania danych
-if GITHUB_TOKEN == "BRAK_TOKENA":
-    st.warning("Dodaj swój token GitHub w ustawieniach Streamlit (Secrets) jako G_TOKEN.")
+if GITHUB_TOKEN == "BRAK":
+    st.error("Błąd: Skonfiguruj G_TOKEN w Secrets!")
 else:
     config, file_sha = get_github_data()
 
     if config:
-        tabs = st.tabs(["📊 Kalkulator", "🔐 Panel Admina"])
+        tabs = st.tabs(["📊 Kalkulator Trasy", "⚙️ Ustawienia Cen"])
 
-        # --- TAB 1: KALKULATOR ---
         with tabs[0]:
-            col1, col2 = st.columns(2)
+            c1, c2 = st.columns([1, 1])
             
-            with col1:
-                st.subheader("Parametry Trasy")
-                pojazdy_lista = list(config["pojazdy"].keys())
-                wybrany_pojazd = st.selectbox("Wybierz pojazd", pojazdy_lista)
+            with c1:
+                st.subheader("Parametry")
+                v_type = st.selectbox("Typ pojazdu", list(config["VEHICLE_DATA"].keys()))
+                route = st.selectbox("Kierunek (Trasa)", list(config["DISTANCES_AND_MYTO"].keys()))
                 
-                trasy_lista = list(config["trasy"].keys())
-                wybrana_trasa = st.selectbox("Wybierz trasę (powrotna)", trasy_lista)
-                
-                km_dodatkowe = st.number_input("Dodatkowe kilometry", min_value=0, value=0)
-                
-            with col2:
-                st.subheader("Koszty i Wynik")
-                paliwo_cena = config["ceny_bazowe"]["paliwo_on"]
-                auto_data = config["pojazdy"][wybrany_pojazd]
-                trasa_km = config["trasy"][wybrana_trasa]
-                total_km = trasa_km + km_dodatkowe
-                
-                # Obliczenia
-                koszt_paliwa = (total_km / 100) * auto_data["spalanie"] * paliwo_cena
-                koszt_diet = auto_data["dieta_dzienna"] * (total_km / 700) # uproszczone: 700km dziennie
-                koszt_eksploatacji = total_km * auto_data["koszt_km_eksploatacja"]
-                
-                total_cost = koszt_paliwa + koszt_diet + koszt_eksploatacji
-                
-                st.info(f"Dystans całkowity: **{total_km} km**")
-                st.metric("Szacowany koszt transportu", f"{round(total_cost, 2)} PLN")
-                
-                with st.expander("Rozbicie kosztów"):
-                    st.write(f"- Paliwo: {round(koszt_paliwa, 2)} PLN")
-                    st.write(f"- Diety/Obsługa: {round(koszt_diet, 2)} PLN")
-                    st.write(f"- Eksploatacja: {round(koszt_eksploatacji, 2)} PLN")
+                # Pobranie danych z config
+                v_info = config["VEHICLE_DATA"][v_type]
+                r_info = config["DISTANCES_AND_MYTO"][route]
+                prices = config["PRICE"]
+                euro = config["EURO_RATE"]
 
-        # --- TAB 2: PANEL ADMINA ---
+                extra_km = st.number_input("Dodatkowe km (łącznie)", value=0)
+                # Rozdzielamy dodatkowe km proporcjonalnie lub uznajemy za EU
+                dist_pl = r_info["distPL"]
+                dist_eu = r_info["distEU"] + extra_km
+                total_km = dist_pl + dist_eu
+
+            with c2:
+                st.subheader("Wyniki Obliczeń")
+                
+                # Obliczenia paliwa
+                total_fuel = total_km * v_info["fuelUsage"]
+                # Zakładamy tankowanie w PL do pełna, reszta w EU (uproszczenie logistyczne)
+                fuel_pl_liters = min(total_fuel, v_info["tankCapacity"])
+                fuel_eu_liters = max(0, total_fuel - fuel_pl_liters)
+                
+                cost_fuel = (fuel_pl_liters * prices["fuelPLN"]) + (fuel_eu_liters * prices["fuelEUR"] * euro)
+                
+                # AdBlue
+                cost_adblue = (total_km * v_info["adBlueUsage"]) * prices["adBluePLN"]
+                
+                # Serwis
+                cost_service = (dist_pl * v_info["serviceCostPLN"]) + (dist_eu * v_info["serviceCostEUR"] * euro)
+                
+                # Myto (pobierane z klucza myto + TypPojazdu)
+                myto_key = f"myto{v_type}"
+                cost_myto = r_info.get(myto_key, 0)
+
+                total_sum = cost_fuel + cost_adblue + cost_service + cost_myto
+
+                st.metric("Całkowity koszt (PLN)", f"{round(total_sum, 2)} zł")
+                
+                with st.expander("Szczegóły kosztów"):
+                    st.write(f"⛽ Paliwo suma: {round(cost_fuel, 2)} PLN")
+                    st.write(f"💧 AdBlue: {round(cost_adblue, 2)} PLN")
+                    st.write(f"🛠️ Serwis/Eksploatacja: {round(cost_service, 2)} PLN")
+                    st.write(f"🛣️ Myto: {round(cost_myto, 2)} PLN")
+                    st.write(f"📏 Dystans: {total_km} km ({dist_pl} PL / {dist_eu} EU)")
+
         with tabs[1]:
-            st.subheader("Ustawienia systemowe")
-            pwd = st.text_input("Hasło dostępu", type="password")
-            
+            st.subheader("Aktualizacja stawek bazowych")
+            pwd = st.text_input("Hasło", type="password")
             if pwd == ADMIN_PASSWORD:
-                st.success("Dostęp przyznany")
+                new_euro = st.number_input("Kurs EURO", value=config["EURO_RATE"])
+                new_f_pl = st.number_input("Paliwo PL (PLN)", value=config["PRICE"]["fuelPLN"])
+                new_f_eu = st.number_input("Paliwo EU (EUR)", value=config["PRICE"]["fuelEUR"])
                 
-                new_fuel = st.number_input("Cena paliwa ON (PLN)", value=config["ceny_bazowe"]["paliwo_on"], step=0.01)
-                
-                st.write("---")
-                st.write("**Edycja floty:**")
-                updated_pojazdy = config["pojazdy"].copy()
-                for p_name, p_data in updated_pojazdy.items():
-                    col_p1, col_p2 = st.columns(2)
-                    with col_p1:
-                        updated_pojazdy[p_name]["spalanie"] = st.number_input(f"{p_name} - spalanie/100km", value=p_data["spalanie"])
-                    with col_p2:
-                        updated_pojazdy[p_name]["koszt_km_eksploatacja"] = st.number_input(f"{p_name} - koszt eksploatacji/km", value=p_data["koszt_km_eksploatacja"])
-
-                if st.button("✅ ZAPISZ ZMIANY W REPOZYTORIUM"):
-                    config["ceny_bazowe"]["paliwo_on"] = new_fuel
-                    config["pojazdy"] = updated_pojazdy
-                    
+                if st.button("Zapisz zmiany"):
+                    config["EURO_RATE"] = new_euro
+                    config["PRICE"]["fuelPLN"] = new_f_pl
+                    config["PRICE"]["fuelEUR"] = new_f_eu
                     if update_github_data(config, file_sha):
-                        st.success("Dane zaktualizowane pomyślnie!")
-                        st.cache_data.clear() # Czyścimy cache
-                    else:
-                        st.error("Błąd podczas zapisu na GitHub.")
+                        st.success("Zapisano!")
+                        st.rerun()
             elif pwd != "":
                 st.error("Błędne hasło")
+    else:
+        st.error("Nie udało się załadować config.json. Sprawdź plik i Token.")
