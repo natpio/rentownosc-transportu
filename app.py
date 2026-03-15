@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import requests
 import base64
+from PIL import Image
 
 # =========================================================
 # KONFIGURACJA GITHUB
@@ -15,113 +16,102 @@ except:
 REPO_OWNER = "natpio"
 REPO_NAME = "rentownosc-transportu"
 FILE_PATH = "config.json"
-ADMIN_PASSWORD = "admin" # Zalecana zmiana w Secrets
+ADMIN_PASSWORD = "admin" # Możesz zmienić na własne w Panelu
 
 # =========================================================
-# STYLIZACJA PREMIUM (DARK & COPPER)
+# STYLIZACJA VORTEZA SYSTEMS (PREMIUM DARK & COPPER)
 # =========================================================
-def apply_custom_style():
+def apply_vorteza_theme():
     st.markdown("""
         <style>
-            /* Główn tło i kolory tekstu */
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+            /* Kolory przewodnie */
+            :root {
+                --v-copper: #B58863;
+                --v-dark: #0E0E0E;
+                --v-panel: #1A1A1A;
+                --v-text: #E0E0E0;
+            }
+
             .stApp {
-                background-color: #121212;
-                color: #E0E0E0;
-            }
-            
-            /* Nagłówki - Kolor miedziany/złoty */
-            h1, h2, h3, .stSubheader {
-                color: #B58863 !important; /* Przykładowy kolor miedziany z logo */
+                background-color: var(--v-dark);
+                color: var(--v-text);
                 font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
             }
 
-            /* Unikalny styl dla głównego tytułu z logo */
-            .main-title {
-                font-size: 2.5rem;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                padding-bottom: 20px;
-                border-bottom: 2px solid #333;
+            /* Nagłówki i miedziane akcenty */
+            h1, h2, h3, .stSubheader {
+                color: var(--v-copper) !important;
+                font-weight: 700 !important;
+                letter-spacing: 1px;
+                text-transform: uppercase;
             }
 
-            /* Stylizowanie Tabs (zakładek) */
-            .stTabs [data-baseweb="tab-list"] {
-                gap: 10px;
-                background-color: #1E1E1E;
-                padding: 10px;
-                border-radius: 10px;
-            }
-            .stTabs [data-baseweb="tab"] {
-                height: 50px;
-                white-space: pre-wrap;
-                background-color: transparent;
+            /* Kontener wyniku (Vorteza Margin Card) */
+            div[data-testid="stVerticalBlock"] > div:has(div.vorteza-card) {
+                background-color: var(--v-panel);
+                padding: 30px;
                 border-radius: 5px;
-                color: #A0A0A0;
-                border: none;
-            }
-            .stTabs [aria-selected="true"] {
-                background-color: #333333 !important;
-                color: #B58863 !important;
-                font-weight: bold;
+                border-left: 4px solid var(--v-copper);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             }
 
-            /* Stylizowanie bocznego paska (jeśli używany) */
-            [data-testid="stSidebar"] {
-                background-color: #1E1E1E;
-                border-right: 1px solid #333;
-            }
-
-            /* Stylizowanie kontenerów (np. c2 z wynikami) */
-            [data-testid="stVerticalBlock"] > div:has(div.metric-container) {
-                background-color: #1E1E1E;
-                padding: 20px;
-                border-radius: 15px;
-                border: 1px solid #333;
-            }
-
-            /* Własny styl dla Metric */
+            /* Metryki */
             [data-testid="stMetricValue"] {
-                color: #B58863 !important;
-                font-size: 3rem !important;
+                color: var(--v-copper) !important;
+                font-size: 3.5rem !important;
+                font-weight: 700 !important;
             }
             [data-testid="stMetricLabel"] {
-                color: #A0A0A0 !important;
+                color: #888 !important;
+                text-transform: uppercase;
+                font-size: 0.9rem !important;
+            }
+
+            /* Zakładki (Tabs) */
+            .stTabs [data-baseweb="tab-list"] {
+                gap: 20px;
+                background-color: transparent;
+            }
+            .stTabs [data-baseweb="tab"] {
+                color: #666;
+                font-size: 1.1rem;
+                padding: 10px 20px;
+            }
+            .stTabs [aria-selected="true"] {
+                color: var(--v-copper) !important;
+                border-bottom: 2px solid var(--v-copper) !important;
             }
 
             /* Przyciski */
             .stButton > button {
                 background-color: transparent;
-                color: #B58863;
-                border: 2px solid #B58863;
-                border-radius: 20px;
-                padding: 10px 24px;
-                transition: all 0.3s;
+                color: var(--v-copper);
+                border: 1px solid var(--v-copper);
+                border-radius: 0px;
+                padding: 15px 30px;
+                width: 100%;
+                font-weight: 700;
+                transition: 0.4s ease;
             }
             .stButton > button:hover {
-                background-color: #B58863;
-                color: #121212;
+                background-color: var(--v-copper);
+                color: #000;
+                box-shadow: 0 0 20px rgba(181, 136, 99, 0.3);
             }
 
-            /* Expander */
-            .stExpander {
-                background-color: #1E1E1E;
-                border: 1px solid #333;
-                border-radius: 10px;
-            }
-
-            /* Inputy (number, selectbox) */
-            div[data-baseweb="select"] > div, div[data-baseweb="input"] > div {
-                background-color: #1E1E1E !important;
-                color: #E0E0E0 !important;
-                border-color: #333 !important;
+            /* Formularze */
+            input, div[data-baseweb="select"] {
+                background-color: #222 !important;
+                border: 1px solid #333 !important;
+                color: white !important;
             }
         </style>
     """, unsafe_allow_html=True)
 
 # =========================================================
-# FUNKCJE OPERACYJNE (BEZ ZMIAN)
+# LOGIKA POBIERANIA / ZAPISU DANYCH
 # =========================================================
 def get_github_data():
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
@@ -138,104 +128,111 @@ def update_github_data(new_data, sha):
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     updated_content = json.dumps(new_data, indent=4, ensure_ascii=False)
     encoded = base64.b64encode(updated_content.encode('utf-8')).decode('utf-8')
-    payload = {"message": "Aktualizacja stawek bazowych", "content": encoded, "sha": sha}
+    payload = {"message": "Update from Vorteza Systems Interface", "content": encoded, "sha": sha}
     res = requests.put(url, headers=headers, json=payload)
     return res.status_code in [200, 201]
 
 # =========================================================
 # GŁÓWNA APLIKACJA
 # =========================================================
+st.set_page_config(page_title="VORTEZA SYSTEMS | TRACE", layout="wide")
+apply_vorteza_theme()
 
-st.set_page_config(page_title="VORTEZA TRACE - Kalkulator Kosztów", layout="wide", page_icon="🚚")
-
-# Wdrożenie stylów
-apply_custom_style()
-
-# Nagłówek z LOGO VORTEZA (Używamy Emoji zamiast obrazka, dopóki nie masz pliku logo)
-st.markdown('<div class="main-title">📈 VORTEZA <span style="font-weight:300; font-size:1.5rem;">Logistics Intelligence</span></div>', unsafe_allow_html=True)
+# Header z Logo
+col_l, col_r = st.columns([1, 4])
+with col_l:
+    try:
+        logo = Image.open('logo_vorteza.png')
+        st.image(logo, use_container_width=True)
+    except:
+        st.title("VORTEZA")
 
 if GITHUB_TOKEN == "BRAK":
-    st.error("Błąd: Skonfiguruj G_TOKEN w Secrets!")
+    st.error("SYSTEM ERROR: BRAK G_TOKEN W SEKRETACH STREAMLIT.")
 else:
     config, file_sha = get_github_data()
 
     if config:
-        # Zmieniamy nazwy zakładek na bardziej spójne ze stylem (np. VORTEZA MARGIN)
-        tabs = st.tabs(["📊 VORTEZA MARGIN - Kalkulator", "⚙️ Konfiguracja Systemu"])
+        tab1, tab2 = st.tabs(["📊 VORTEZA MARGIN", "⚙️ SYSTEM CORE"])
 
-        with tabs[0]:
-            c1, c2 = st.columns([1, 1])
+        # --- TAB 1: KALKULATOR ---
+        with tab1:
+            c1, c2 = st.columns([1, 1], gap="large")
             
             with c1:
-                st.subheader("Parametry Transportu")
-                v_type = st.selectbox("Typ pojazdu", list(config["VEHICLE_DATA"].keys()))
-                route = st.selectbox("Kierunek docelowy", list(config["DISTANCES_AND_MYTO"].keys()))
+                st.subheader("Transport Configuration")
+                v_type = st.selectbox("Select Vehicle Unit", list(config["VEHICLE_DATA"].keys()))
+                route = st.selectbox("Target Destination", list(config["DISTANCES_AND_MYTO"].keys()))
                 
                 v_info = config["VEHICLE_DATA"][v_type]
                 r_info = config["DISTANCES_AND_MYTO"][route]
                 prices = config["PRICE"]
                 euro = config["EURO_RATE"]
 
-                extra_km = st.number_input("Dodatkowe kilometry (objazdy, puste)", value=0)
+                extra_km = st.number_input("Additional Distance (Total KM)", value=0, step=10)
+                
+                # Obliczanie dystansów
                 dist_pl = r_info["distPL"]
                 dist_eu = r_info["distEU"] + extra_km
                 total_km = dist_pl + dist_eu
 
             with c2:
-                st.markdown('<div class="metric-container">', unsafe_allow_html=True)
-                st.subheader("Całkowity Koszt Techniczny")
+                st.markdown('<div class="vorteza-card">', unsafe_allow_html=True)
+                st.subheader("Technical Margin Analysis")
                 
-                # Obliczenia paliwa (logika z poprzedniego kroku)
-                total_fuel = total_km * v_info["fuelUsage"]
-                fuel_pl_liters = min(total_fuel, v_info["tankCapacity"])
-                fuel_eu_liters = max(0, total_fuel - fuel_pl_liters)
-                cost_fuel = (fuel_pl_liters * prices["fuelPLN"]) + (fuel_eu_liters * prices["fuelEUR"] * euro)
+                # Kalkulacja paliwa (Bak w PL -> Reszta EU)
+                total_fuel_liters = total_km * v_info["fuelUsage"]
+                pl_liters = min(total_fuel_liters, v_info["tankCapacity"])
+                eu_liters = max(0, total_fuel_liters - pl_liters)
                 
-                # AdBlue, Serwis, Myto
+                cost_fuel = (pl_liters * prices["fuelPLN"]) + (eu_liters * prices["fuelEUR"] * euro)
+                
+                # Pozostałe koszty techniczne
                 cost_adblue = (total_km * v_info["adBlueUsage"]) * prices["adBluePLN"]
                 cost_service = (dist_pl * v_info["serviceCostPLN"]) + (dist_eu * v_info["serviceCostEUR"] * euro)
+                
                 myto_key = f"myto{v_type}"
                 cost_myto = r_info.get(myto_key, 0)
 
                 total_sum = cost_fuel + cost_adblue + cost_service + cost_myto
 
-                st.metric(label="KOSZT CAŁKOWITY (PLN)", value=f"{round(total_sum, 2)} zł")
+                st.metric(label="TOTAL TECHNICAL COST (PLN)", value=f"{round(total_sum, 2)} zł")
                 
-                with st.expander("👁️ Pokaż szczegółowe rozbicie kosztów"):
-                    st.write(f"⛽ Paliwo suma: **{round(cost_fuel, 2)} PLN**")
-                    st.write(f"💧 AdBlue: **{round(cost_adblue, 2)} PLN**")
-                    st.write(f"🛠️ Serwis/Eksploatacja: **{round(cost_service, 2)} PLN**")
-                    st.write(f"🛣️ Myto: **{round(cost_myto, 2)} PLN**")
+                with st.expander("👁️ SHOW DETAILED LOGS"):
+                    st.write(f"⛽ Fuel Costs: **{round(cost_fuel, 2)} PLN**")
+                    st.write(f"💧 AdBlue Fluids: **{round(cost_adblue, 2)} PLN**")
+                    st.write(f"🛠️ Service & Wear: **{round(cost_service, 2)} PLN**")
+                    st.write(f"🛣️ Tolls/Myto: **{round(cost_myto, 2)} PLN**")
                     st.write("---")
-                    st.write(f"📏 Dystans: **{total_km} km** ({dist_pl} PL / {dist_eu} EU)")
+                    st.write(f"📏 Distance Analysis: **{total_km} KM** ({dist_pl} PL / {dist_eu} EU)")
                 st.markdown('</div>', unsafe_allow_html=True)
 
-        with tabs[1]:
-            st.subheader("Panel Administracyjny Systemu")
-            pwd = st.text_input("Hasło dostępu", type="password")
+        # --- TAB 2: PANEL ADMINA ---
+        with tab2:
+            st.subheader("Authentication Required")
+            pwd = st.text_input("Vorteza Master Key", type="password")
+            
             if pwd == ADMIN_PASSWORD:
-                st.success("Dostęp autoryzowany")
-                
-                col_a1, col_a2, col_a3 = st.columns(3)
-                with col_a1:
-                    new_euro = st.number_input("Kurs EURO (PLN)", value=config["EURO_RATE"], step=0.001)
-                with col_a2:
-                    new_f_pl = st.number_input("Paliwo PL (PLN/L)", value=config["PRICE"]["fuelPLN"], step=0.01)
-                with col_a3:
-                    new_f_eu = st.number_input("Paliwo EU (EUR/L)", value=config["PRICE"]["fuelEUR"], step=0.01)
-                
+                st.success("Access Granted.")
                 st.write("---")
-                if st.button("ZAPISZ NOWE STAWKI BAZOWE"):
+                
+                a1, a2, a3 = st.columns(3)
+                with a1:
+                    new_euro = st.number_input("EURO Exchange Rate", value=config["EURO_RATE"], format="%.4f")
+                with a2:
+                    new_fuel_pl = st.number_input("Fuel Price PL (PLN/L)", value=config["PRICE"]["fuelPLN"])
+                with ca3 if 'ca3' in locals() else a3: # Poprawka na nazewnictwo kolumn
+                    new_fuel_eu = st.number_input("Fuel Price EU (EUR/L)", value=config["PRICE"]["fuelEUR"])
+                
+                if st.button("PUSH DATA TO VORTEZA CLOUD"):
                     config["EURO_RATE"] = new_euro
-                    config["PRICE"]["fuelPLN"] = new_f_pl
-                    config["PRICE"]["fuelEUR"] = new_f_eu
+                    config["PRICE"]["fuelPLN"] = new_fuel_pl
+                    config["PRICE"]["fuelEUR"] = new_fuel_eu
+                    
                     if update_github_data(config, file_sha):
-                        st.success("Zmiany zapisane w repozytorium VORTEZA.")
-                        st.cache_data.clear()
+                        st.success("Cloud Synchronized.")
                         st.rerun()
-                    else:
-                        st.error("Błąd zapisu. Sprawdź konfigurację GitHub.")
             elif pwd != "":
-                st.error("Błędne hasło")
+                st.error("Authentication Failed.")
     else:
-        st.error("Nie udało się pobrać konfiguracji z VORTEZA Systems.")
+        st.error("SYSTEM HALT: FAILED TO LOAD CONFIG.JSON FROM VORTEZA SYSTEMS.")
