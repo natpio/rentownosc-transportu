@@ -48,9 +48,9 @@
             "Gorzów Wielkopolski": {
                 "distPL": 134,
                 "distEU": 0,
-                "mytoFTL": 100.0,
-                "mytoSolo": 100.0,
-                "mytoBus": 50.0
+                "mytoFTL": 13.63,
+                "mytoSolo": 13.63,
+                "mytoBus": 0.0
             },
             "Berlin": {
                 "distPL": 180,
