@@ -19,9 +19,34 @@ FILE_PATH = "config.json"
 ADMIN_PASSWORD = "admin" # Możesz zmienić na własne w Panelu
 
 # =========================================================
+# FUNKCJA POMOCNICZA DLA TŁA
+# =========================================================
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+# =========================================================
 # STYLIZACJA VORTEZA SYSTEMS (PREMIUM DARK & COPPER)
 # =========================================================
 def apply_vorteza_theme():
+    # Próba załadowania tła z pliku png
+    try:
+        bin_str = get_base64_of_bin_file('bg_vorteza.png')
+        bg_img_style = f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{bin_str}");
+            background-size: cover;
+            background-attachment: fixed;
+        }}
+        </style>
+        """
+        st.markdown(bg_img_style, unsafe_allow_html=True)
+    except:
+        # Fallback do koloru, jeśli pliku nie ma
+        st.markdown("<style>.stApp { background-color: #0E0E0E; }</style>", unsafe_allow_html=True)
+
     st.markdown("""
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
@@ -30,12 +55,11 @@ def apply_vorteza_theme():
             :root {
                 --v-copper: #B58863;
                 --v-dark: #0E0E0E;
-                --v-panel: #1A1A1A;
+                --v-panel: rgba(26, 26, 26, 0.85); /* Lekka przezroczystość panelu */
                 --v-text: #E0E0E0;
             }
 
             .stApp {
-                background-color: var(--v-dark);
                 color: var(--v-text);
                 font-family: 'Montserrat', sans-serif;
             }
@@ -46,6 +70,7 @@ def apply_vorteza_theme():
                 font-weight: 700 !important;
                 letter-spacing: 1px;
                 text-transform: uppercase;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             }
 
             /* Kontener wyniku (Vorteza Margin Card) */
@@ -55,6 +80,7 @@ def apply_vorteza_theme():
                 border-radius: 5px;
                 border-left: 4px solid var(--v-copper);
                 box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+                backdrop-filter: blur(10px); /* Efekt szkła dla czytelności na tle */
             }
 
             /* Metryki */
@@ -64,7 +90,7 @@ def apply_vorteza_theme():
                 font-weight: 700 !important;
             }
             [data-testid="stMetricLabel"] {
-                color: #888 !important;
+                color: #AAA !important;
                 text-transform: uppercase;
                 font-size: 0.9rem !important;
             }
@@ -72,10 +98,11 @@ def apply_vorteza_theme():
             /* Zakładki (Tabs) */
             .stTabs [data-baseweb="tab-list"] {
                 gap: 20px;
-                background-color: transparent;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 5px;
             }
             .stTabs [data-baseweb="tab"] {
-                color: #666;
+                color: #CCC;
                 font-size: 1.1rem;
                 padding: 10px 20px;
             }
@@ -86,7 +113,7 @@ def apply_vorteza_theme():
 
             /* Przyciski */
             .stButton > button {
-                background-color: transparent;
+                background-color: rgba(0, 0, 0, 0.5);
                 color: var(--v-copper);
                 border: 1px solid var(--v-copper);
                 border-radius: 0px;
@@ -221,7 +248,7 @@ else:
                     new_euro = st.number_input("EURO Exchange Rate", value=config["EURO_RATE"], format="%.4f")
                 with a2:
                     new_fuel_pl = st.number_input("Fuel Price PL (PLN/L)", value=config["PRICE"]["fuelPLN"])
-                with ca3 if 'ca3' in locals() else a3: # Poprawka na nazewnictwo kolumn
+                with a3:
                     new_fuel_eu = st.number_input("Fuel Price EU (EUR/L)", value=config["PRICE"]["fuelEUR"])
                 
                 if st.button("PUSH DATA TO VORTEZA CLOUD"):
