@@ -16,121 +16,223 @@ except:
 REPO_OWNER = "natpio"
 REPO_NAME = "rentownosc-transportu"
 FILE_PATH = "config.json"
-ADMIN_PASSWORD = "admin"
+ADMIN_PASSWORD = "admin" # Możesz zmienić na własne w Panelu
 
 # =========================================================
-# FUNKCJA DO TŁA Z PLIKU
+# STYLIZACJA VORTEZA SYSTEMS (PREMIUM DARK & COPPER)
 # =========================================================
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+def apply_vorteza_theme():
+    st.markdown("""
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
-def set_bg_from_file(main_bg_img):
-    bin_str = get_base64_of_bin_file(main_bg_img)
-    page_bg_img = f'''
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{bin_str}");
-        background-size: cover;
-        background-attachment: fixed;
-    }}
-    
-    /* Półprzezroczyste panele, żeby tekst był czytelny na ciemnym tle */
-    [data-testid="stVerticalBlock"] > div:has(div.vorteza-card) {{
-        background-color: rgba(26, 26, 26, 0.85) !important;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(181, 136, 99, 0.3);
-    }}
-    
-    .stTabs [data-baseweb="tab-list"] {{
-        background-color: rgba(26, 26, 26, 0.7) !important;
-    }}
+            /* Kolory przewodnie */
+            :root {
+                --v-copper: #B58863;
+                --v-dark: #0E0E0E;
+                --v-panel: #1A1A1A;
+                --v-text: #E0E0E0;
+            }
 
-    h1, h2, h3, .stSubheader, [data-testid="stMetricValue"] {{
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    }}
-    </style>
-    '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+            .stApp {
+                background-color: var(--v-dark);
+                color: var(--v-text);
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            /* Nagłówki i miedziane akcenty */
+            h1, h2, h3, .stSubheader {
+                color: var(--v-copper) !important;
+                font-weight: 700 !important;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            /* Kontener wyniku (Vorteza Margin Card) */
+            div[data-testid="stVerticalBlock"] > div:has(div.vorteza-card) {
+                background-color: var(--v-panel);
+                padding: 30px;
+                border-radius: 5px;
+                border-left: 4px solid var(--v-copper);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            }
+
+            /* Metryki */
+            [data-testid="stMetricValue"] {
+                color: var(--v-copper) !important;
+                font-size: 3.5rem !important;
+                font-weight: 700 !important;
+            }
+            [data-testid="stMetricLabel"] {
+                color: #888 !important;
+                text-transform: uppercase;
+                font-size: 0.9rem !important;
+            }
+
+            /* Zakładki (Tabs) */
+            .stTabs [data-baseweb="tab-list"] {
+                gap: 20px;
+                background-color: transparent;
+            }
+            .stTabs [data-baseweb="tab"] {
+                color: #666;
+                font-size: 1.1rem;
+                padding: 10px 20px;
+            }
+            .stTabs [aria-selected="true"] {
+                color: var(--v-copper) !important;
+                border-bottom: 2px solid var(--v-copper) !important;
+            }
+
+            /* Przyciski */
+            .stButton > button {
+                background-color: transparent;
+                color: var(--v-copper);
+                border: 1px solid var(--v-copper);
+                border-radius: 0px;
+                padding: 15px 30px;
+                width: 100%;
+                font-weight: 700;
+                transition: 0.4s ease;
+            }
+            .stButton > button:hover {
+                background-color: var(--v-copper);
+                color: #000;
+                box-shadow: 0 0 20px rgba(181, 136, 99, 0.3);
+            }
+
+            /* Formularze */
+            input, div[data-baseweb="select"] {
+                background-color: #222 !important;
+                border: 1px solid #333 !important;
+                color: white !important;
+            }
+        </style>
+    """, unsafe_allow_html=True)
 
 # =========================================================
-# START APLIKACJI
+# LOGIKA POBIERANIA / ZAPISU DANYCH
 # =========================================================
-st.set_page_config(page_title="VORTEZA SYSTEMS | TRACE", layout="wide")
-
-# Próba wczytania tła
-try:
-    set_bg_from_file('bg_vorteza.jpg')
-except:
-    st.markdown("<style>.stApp {background-color: #0E0E0E;}</style>", unsafe_allow_html=True)
-
-# Reszta stylizacji (miedziane akcenty)
-st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-    :root { --v-copper: #B58863; }
-    .stApp { color: #E0E0E0; font-family: 'Montserrat', sans-serif; }
-    h1, h2, h3, .stSubheader { color: var(--v-copper) !important; font-weight: 700 !important; text-transform: uppercase; }
-    [data-testid="stMetricValue"] { color: var(--v-copper) !important; font-size: 3rem !important; }
-    .stButton > button { background-color: rgba(0,0,0,0.5); color: var(--v-copper); border: 1px solid var(--v-copper); font-weight: 700; }
-    .stButton > button:hover { background-color: var(--v-copper); color: #000; }
-    input, div[data-baseweb="select"] { background-color: rgba(30,30,30,0.9) !important; border: 1px solid #444 !important; color: white !important; }
-    </style>
-""", unsafe_allow_html=True)
-
-# Header z Logo
-col_l, _ = st.columns([1, 4])
-with col_l:
-    try:
-        st.image(Image.open('logo_vorteza.png'), use_container_width=True)
-    except:
-        st.title("VORTEZA SYSTEMS")
-
-# Logika danych (bez zmian)
-if GITHUB_TOKEN == "BRAK":
-    st.error("SYSTEM ERROR: BRAK G_TOKEN.")
-else:
+def get_github_data():
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    res = requests.get(url, headers=headers)
-    
-    if res.status_code == 200:
-        data = res.json()
-        config = json.loads(base64.b64decode(data['content']).decode('utf-8'))
-        sha = data['sha']
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        content = response.json()
+        decoded = base64.b64decode(content['content']).decode('utf-8')
+        return json.loads(decoded), content['sha']
+    return None, None
 
+def update_github_data(new_data, sha):
+    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    updated_content = json.dumps(new_data, indent=4, ensure_ascii=False)
+    encoded = base64.b64encode(updated_content.encode('utf-8')).decode('utf-8')
+    payload = {"message": "Update from Vorteza Systems Interface", "content": encoded, "sha": sha}
+    res = requests.put(url, headers=headers, json=payload)
+    return res.status_code in [200, 201]
+
+# =========================================================
+# GŁÓWNA APLIKACJA
+# =========================================================
+st.set_page_config(page_title="VORTEZA SYSTEMS | TRACE", layout="wide")
+apply_vorteza_theme()
+
+# Header z Logo
+col_l, col_r = st.columns([1, 4])
+with col_l:
+    try:
+        logo = Image.open('logo_vorteza.png')
+        st.image(logo, use_container_width=True)
+    except:
+        st.title("VORTEZA")
+
+if GITHUB_TOKEN == "BRAK":
+    st.error("SYSTEM ERROR: BRAK G_TOKEN W SEKRETACH STREAMLIT.")
+else:
+    config, file_sha = get_github_data()
+
+    if config:
         tab1, tab2 = st.tabs(["📊 VORTEZA MARGIN", "⚙️ SYSTEM CORE"])
 
+        # --- TAB 1: KALKULATOR ---
         with tab1:
             c1, c2 = st.columns([1, 1], gap="large")
+            
             with c1:
                 st.subheader("Transport Configuration")
-                v_type = st.selectbox("Vehicle Unit", list(config["VEHICLE_DATA"].keys()))
-                route = st.selectbox("Destination", list(config["DISTANCES_AND_MYTO"].keys()))
-                extra_km = st.number_input("Extra KM", value=0)
+                v_type = st.selectbox("Select Vehicle Unit", list(config["VEHICLE_DATA"].keys()))
+                route = st.selectbox("Target Destination", list(config["DISTANCES_AND_MYTO"].keys()))
                 
-                v = config["VEHICLE_DATA"][v_type]
-                r = config["DISTANCES_AND_MYTO"][route]
+                v_info = config["VEHICLE_DATA"][v_type]
+                r_info = config["DISTANCES_AND_MYTO"][route]
+                prices = config["PRICE"]
+                euro = config["EURO_RATE"]
+
+                extra_km = st.number_input("Additional Distance (Total KM)", value=0, step=10)
                 
-                total_km = r["distPL"] + r["distEU"] + extra_km
-            
+                # Obliczanie dystansów
+                dist_pl = r_info["distPL"]
+                dist_eu = r_info["distEU"] + extra_km
+                total_km = dist_pl + dist_eu
+
             with c2:
                 st.markdown('<div class="vorteza-card">', unsafe_allow_html=True)
-                st.subheader("Margin Analysis")
+                st.subheader("Technical Margin Analysis")
                 
-                # Uproszczone obliczenie dla testu wyglądu
-                fuel_cost = (total_km * v["fuelUsage"]) * config["PRICE"]["fuelPLN"]
-                myto = r.get(f"myto{v_type}", 0)
-                total = fuel_cost + myto + (total_km * v["serviceCostPLN"])
+                # Kalkulacja paliwa (Bak w PL -> Reszta EU)
+                total_fuel_liters = total_km * v_info["fuelUsage"]
+                pl_liters = min(total_fuel_liters, v_info["tankCapacity"])
+                eu_liters = max(0, total_fuel_liters - pl_liters)
                 
-                st.metric("ESTIMATED COST", f"{round(total, 2)} PLN")
+                cost_fuel = (pl_liters * prices["fuelPLN"]) + (eu_liters * prices["fuelEUR"] * euro)
+                
+                # Pozostałe koszty techniczne
+                cost_adblue = (total_km * v_info["adBlueUsage"]) * prices["adBluePLN"]
+                cost_service = (dist_pl * v_info["serviceCostPLN"]) + (dist_eu * v_info["serviceCostEUR"] * euro)
+                
+                myto_key = f"myto{v_type}"
+                cost_myto = r_info.get(myto_key, 0)
+
+                total_sum = cost_fuel + cost_adblue + cost_service + cost_myto
+
+                st.metric(label="TOTAL TECHNICAL COST (PLN)", value=f"{round(total_sum, 2)} zł")
+                
+                with st.expander("👁️ SHOW DETAILED LOGS"):
+                    st.write(f"⛽ Fuel Costs: **{round(cost_fuel, 2)} PLN**")
+                    st.write(f"💧 AdBlue Fluids: **{round(cost_adblue, 2)} PLN**")
+                    st.write(f"🛠️ Service & Wear: **{round(cost_service, 2)} PLN**")
+                    st.write(f"🛣️ Tolls/Myto: **{round(cost_myto, 2)} PLN**")
+                    st.write("---")
+                    st.write(f"📏 Distance Analysis: **{total_km} KM** ({dist_pl} PL / {dist_eu} EU)")
                 st.markdown('</div>', unsafe_allow_html=True)
 
+        # --- TAB 2: PANEL ADMINA ---
         with tab2:
-            st.subheader("Admin Access")
-            if st.text_input("Key", type="password") == ADMIN_PASSWORD:
-                st.success("Authenticated")
-                # Tu możesz dodać resztę edycji...
+            st.subheader("Authentication Required")
+            pwd = st.text_input("Vorteza Master Key", type="password")
+            
+            if pwd == ADMIN_PASSWORD:
+                st.success("Access Granted.")
+                st.write("---")
+                
+                a1, a2, a3 = st.columns(3)
+                with a1:
+                    new_euro = st.number_input("EURO Exchange Rate", value=config["EURO_RATE"], format="%.4f")
+                with a2:
+                    new_fuel_pl = st.number_input("Fuel Price PL (PLN/L)", value=config["PRICE"]["fuelPLN"])
+                with ca3 if 'ca3' in locals() else a3: # Poprawka na nazewnictwo kolumn
+                    new_fuel_eu = st.number_input("Fuel Price EU (EUR/L)", value=config["PRICE"]["fuelEUR"])
+                
+                if st.button("PUSH DATA TO VORTEZA CLOUD"):
+                    config["EURO_RATE"] = new_euro
+                    config["PRICE"]["fuelPLN"] = new_fuel_pl
+                    config["PRICE"]["fuelEUR"] = new_fuel_eu
+                    
+                    if update_github_data(config, file_sha):
+                        st.success("Cloud Synchronized.")
+                        st.rerun()
+            elif pwd != "":
+                st.error("Authentication Failed.")
     else:
-        st.error("Nie znaleziono pliku config.json")
+        st.error("SYSTEM HALT: FAILED TO LOAD CONFIG.JSON FROM VORTEZA SYSTEMS.")
