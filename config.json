@@ -7,27 +7,9 @@
         "adBlueEUR": 1.40
     },
     "VEHICLE_DATA": {
-        "FTL": {
-            "fuelUsage": 0.3,
-            "adBlueUsage": 0.02,
-            "serviceCostPLN": 0.5,
-            "serviceCostEUR": 0.075,
-            "tankCapacity": 900
-        },
-        "Solo": {
-            "fuelUsage": 0.2,
-            "adBlueUsage": 0.02,
-            "serviceCostPLN": 0.5,
-            "serviceCostEUR": 0.075,
-            "tankCapacity": 600
-        },
-        "Bus": {
-            "fuelUsage": 0.14,
-            "adBlueUsage": 0.013,
-            "serviceCostPLN": 0.37,
-            "serviceCostEUR": 0.09,
-            "tankCapacity": 85
-        }
+        "FTL": { "fuelUsage": 0.3, "adBlueUsage": 0.02, "serviceCostPLN": 0.5, "serviceCostEUR": 0.075, "tankCapacity": 900 },
+        "Solo": { "fuelUsage": 0.2, "adBlueUsage": 0.02, "serviceCostPLN": 0.5, "serviceCostEUR": 0.075, "tankCapacity": 600 },
+        "Bus": { "fuelUsage": 0.14, "adBlueUsage": 0.013, "serviceCostPLN": 0.37, "serviceCostEUR": 0.09, "tankCapacity": 85 }
     },
     "DISTANCES_AND_MYTO": {
         "Poznań": {
@@ -67,20 +49,32 @@
             "Sofia": { "distPL": 250, "distEU": 1250, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 }
         },
         "Warszawa": {
-            "Poznań": { "distPL": 350, "distEU": 0, "mytoFTL": 250, "mytoSolo": 250, "mytoBus": 140 },
-            "Gdańsk": { "distPL": 400, "distEU": 0, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
             "Berlin": { "distPL": 450, "distEU": 180, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
-            "Paryż": { "distPL": 450, "distEU": 1150, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 }
+            "Lipsk": { "distPL": 450, "distEU": 300, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Hannover": { "distPL": 450, "distEU": 350, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Paryż": { "distPL": 450, "distEU": 1100, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Lyon": { "distPL": 450, "distEU": 1400, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Barcelona": { "distPL": 450, "distEU": 2100, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Madryt": { "distPL": 450, "distEU": 2450, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Londyn": { "distPL": 450, "distEU": 1150, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Amsterdam": { "distPL": 450, "distEU": 650, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Bruksela": { "distPL": 450, "distEU": 750, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
+            "Wiedeń": { "distPL": 400, "distEU": 400, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 180 },
+            "Praga": { "distPL": 400, "distEU": 200, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 180 }
         },
         "Gdańsk": {
-            "Poznań": { "distPL": 350, "distEU": 0, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
-            "Warszawa": { "distPL": 400, "distEU": 0, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
-            "Berlin": { "distPL": 350, "distEU": 180, "mytoFTL": 250, "mytoSolo": 250, "mytoBus": 130 }
+            "Berlin": { "distPL": 350, "distEU": 180, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
+            "Hannover": { "distPL": 350, "distEU": 350, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
+            "Hamburg": { "distPL": 350, "distEU": 350, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
+            "Amsterdam": { "distPL": 350, "distEU": 650, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
+            "Paryż": { "distPL": 350, "distEU": 1100, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
+            "Sztokholm": { "distPL": 10, "distEU": 1050, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 }
         },
         "Gorzów Wielkopolski": {
             "Berlin": { "distPL": 50, "distEU": 130, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Poznań": { "distPL": 160, "distEU": 0, "mytoFTL": 100, "mytoSolo": 100, "mytoBus": 50 },
-            "Paryż": { "distPL": 50, "distEU": 1050, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 }
+            "Hannover": { "distPL": 50, "distEU": 300, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
+            "Paryż": { "distPL": 50, "distEU": 1050, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
+            "Amsterdam": { "distPL": 50, "distEU": 600, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 }
         }
     }
 }
