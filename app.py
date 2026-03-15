@@ -87,7 +87,7 @@ def apply_vorteza_theme():
                 color: var(--v-copper) !important;
                 font-weight: 700 !important;
                 text-transform: uppercase;
-                letter-spacing: 1px;
+                letter-spacing: 2px;
                 text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             }
 
@@ -96,6 +96,7 @@ def apply_vorteza_theme():
                 font-weight: 700 !important;
                 text-transform: uppercase;
                 font-size: 0.85rem !important;
+                letter-spacing: 1px;
             }
 
             div[data-baseweb="select"] > div, input {
@@ -113,12 +114,11 @@ def apply_vorteza_theme():
                 backdrop-filter: blur(15px);
             }
 
-            /* Widżet podglądu kilometrów */
             .route-preview {
                 background-color: rgba(181, 136, 99, 0.1);
                 border: 1px solid var(--v-copper);
                 padding: 15px;
-                margin-top: 10px;
+                margin-top: 15px;
                 border-radius: 4px;
             }
 
@@ -136,6 +136,11 @@ def apply_vorteza_theme():
                 width: 100%;
                 font-weight: 700;
                 text-transform: uppercase;
+                transition: 0.3s;
+            }
+            .stButton > button:hover {
+                background-color: var(--v-copper);
+                color: black;
             }
 
             .cost-table {
@@ -159,25 +164,42 @@ def apply_vorteza_theme():
     """, unsafe_allow_html=True)
 
 # =========================================================
-# GŁÓWNA APLIKACJA
+# GŁÓWNA KONSTRUKCJA APLIKACJI
 # =========================================================
 st.set_page_config(page_title="VORTEZA SYSTEMS | LOGISTICS", layout="wide")
 apply_vorteza_theme()
 
+# --- SEKCOJA LOGO I TYTUŁU ---
+col_logo, col_title = st.columns([1, 4])
+with col_logo:
+    try:
+        logo = Image.open('logo_vorteza.png')
+        st.image(logo, use_container_width=True)
+    except:
+        st.title("VORTEZA")
+
+with col_title:
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.title("VORTEZA SYSTEMS | TRACE")
+
 if GITHUB_TOKEN == "BRAK":
-    st.error("GITHUB TOKEN NOT FOUND.")
+    st.error("GITHUB TOKEN NOT FOUND IN SECRETS.")
 else:
     config, file_sha = get_github_data()
 
     if config:
         tab1, tab2 = st.tabs(["📊 VORTEZA MARGIN", "⚙️ SYSTEM CORE"])
 
+        # =========================================================
+        # --- TAB 1: KALKULATOR RENTOWNOŚCI ---
+        # =========================================================
         with tab1:
             col_cfg, col_res = st.columns([1, 1], gap="large")
             
             with col_cfg:
                 st.subheader("Transport Configuration")
                 v_type = st.selectbox("Select Vehicle Unit", list(config["VEHICLE_DATA"].keys()))
+                
                 start_points = list(config["DISTANCES_AND_MYTO"].keys())
                 start_p = st.selectbox("Starting Point", start_points)
                 
@@ -190,17 +212,17 @@ else:
                 
                 extra_km = st.number_input("Additional Distance (Total KM)", value=0, step=10)
                 
-                # --- NOWA SEKCJA: PODGLĄD DYSTANSU Z BAZY ---
+                # PODGLĄD DYSTANSU Z BAZY (WIDOCZNE KILOMETRY)
                 if route:
                     r_info = config["DISTANCES_AND_MYTO"][start_p][route]
                     st.markdown(f"""
                         <div class="route-preview">
-                            <b style="color:#B58863;">BASE ROUTE DATA:</b><br>
-                            🇵🇱 Dist PL: <b>{r_info['distPL']} km</b><br>
-                            🇪🇺 Dist EU: <b>{r_info['distEU']} km</b><br>
-                            ➕ Extra: <b>{extra_km} km</b><br>
+                            <b style="color:#B58863;">BASE ROUTE PREVIEW:</b><br>
+                            🇵🇱 Dystans PL: <b>{r_info['distPL']} km</b><br>
+                            🇪🇺 Dystans EU: <b>{r_info['distEU']} km</b><br>
+                            ➕ Dodatkowe: <b>{extra_km} km</b><br>
                             <hr style="border:0; border-top:1px solid #444; margin:5px 0;">
-                            📏 Total Calculation: <b>{r_info['distPL'] + r_info['distEU'] + extra_km} km</b>
+                            📏 Łącznie do obliczeń: <b>{r_info['distPL'] + r_info['distEU'] + extra_km} km</b>
                         </div>
                     """, unsafe_allow_html=True)
 
@@ -217,11 +239,12 @@ else:
                     dist_eu = r_info["distEU"] + extra_km
                     total_km = dist_pl + dist_eu
 
-                    # Obliczenia
+                    # Logika paliwa
                     total_fuel_liters = total_km * v_info["fuelUsage"]
                     pl_liters = min(total_fuel_liters, v_info["tankCapacity"])
                     eu_liters = max(0, total_fuel_liters - pl_liters)
                     
+                    # Obliczenia PLN
                     c_fuel_pln = (pl_liters * prices["fuelPLN"]) + (eu_liters * prices["fuelEUR"] * euro_rate)
                     c_adblue_pln = (total_km * v_info["adBlueUsage"]) * prices["adBluePLN"]
                     c_service_pln = (dist_pl * v_info["serviceCostPLN"]) + (dist_eu * v_info["serviceCostEUR"] * euro_rate)
@@ -232,81 +255,99 @@ else:
                     total_pln = c_fuel_pln + c_adblue_pln + c_service_pln + c_myto_pln
                     total_eur = total_pln / euro_rate
 
+                    # Główne Metryki
                     m1, m2 = st.columns(2)
                     m1.metric("TOTAL COST (PLN)", f"{round(total_pln, 2)} zł")
                     m2.metric("TOTAL COST (EUR)", f"€ {round(total_eur, 2)}")
 
+                    # Tabela
                     st.markdown(f"""
                         <table class="cost-table">
-                            <tr><th>Category</th><th>PLN</th><th>EUR</th></tr>
-                            <tr><td>Fuel</td><td>{round(c_fuel_pln, 2)} zł</td><td>€ {round(c_fuel_pln/euro_rate, 2)}</td></tr>
-                            <tr><td>AdBlue</td><td>{round(c_adblue_pln, 2)} zł</td><td>€ {round(c_adblue_pln/euro_rate, 2)}</td></tr>
-                            <tr><td>Service</td><td>{round(c_service_pln, 2)} zł</td><td>€ {round(c_service_pln/euro_rate, 2)}</td></tr>
-                            <tr><td>Tolls</td><td>{round(c_myto_pln, 2)} zł</td><td>€ {round(c_myto_pln/euro_rate, 2)}</td></tr>
+                            <tr><th>Category</th><th>PLN Value</th><th>EUR Value</th></tr>
+                            <tr><td>Fuel & Energy</td><td>{round(c_fuel_pln, 2)} zł</td><td>€ {round(c_fuel_pln/euro_rate, 2)}</td></tr>
+                            <tr><td>AdBlue Fluids</td><td>{round(c_adblue_pln, 2)} zł</td><td>€ {round(c_adblue_pln/euro_rate, 2)}</td></tr>
+                            <tr><td>Technical Service</td><td>{round(c_service_pln, 2)} zł</td><td>€ {round(c_service_pln/euro_rate, 2)}</td></tr>
+                            <tr><td>Road Tolls (Myto)</td><td>{round(c_myto_pln, 2)} zł</td><td>€ {round(c_myto_pln/euro_rate, 2)}</td></tr>
                         </table>
+                        <div style="margin-top:15px; font-size:0.75rem; color:#666; text-transform: uppercase;">
+                            Rate: 1 EUR = {euro_rate} PLN | Unit: {v_type} | Route: {start_p} - {route}
+                        </div>
                     """, unsafe_allow_html=True)
                     st.markdown('</div>', unsafe_allow_html=True)
 
-        # --- TAB 2: SYSTEM CORE ---
+        # =========================================================
+        # --- TAB 2: SYSTEM CORE (PANEL ADMINA) ---
+        # =========================================================
         with tab2:
             st.subheader("Vorteza Master Access")
             pwd = st.text_input("Vorteza Master Key", type="password")
+            
             if pwd == ADMIN_PASSWORD:
                 st.success("Access Granted.")
                 
+                # 1. Edycja Stałych
                 st.markdown("### 1. Global Economic Factors")
                 e1, e2, e3 = st.columns(3)
-                with e1: new_euro = st.number_input("EURO Rate", value=config["EURO_RATE"], format="%.4f")
-                with e2: new_f_pl = st.number_input("Fuel PLN/L", value=config["PRICE"]["fuelPLN"])
-                with e3: new_f_eu = st.number_input("Fuel EUR/L", value=config["PRICE"]["fuelEUR"])
+                with e1: new_euro = st.number_input("EURO Exchange Rate", value=config["EURO_RATE"], format="%.4f")
+                with e2: new_f_pl = st.number_input("Fuel Price PL (PLN)", value=config["PRICE"]["fuelPLN"])
+                with e3: new_f_eu = st.number_input("Fuel Price EU (EUR)", value=config["PRICE"]["fuelEUR"])
                 
                 st.write("---")
-                st.markdown("### 2. Route Management")
+
+                # 2. Zarządzanie Trasami (TUTAJ ZMIENISZ KILOMETRY)
+                st.markdown("### 2. Route Database Management")
                 adm_mode = st.radio("Mode:", ["Add New Route", "Edit / Delete Existing"], horizontal=True)
 
                 if adm_mode == "Add New Route":
                     as1, as2 = st.columns(2)
                     with as1:
                         starts = list(config["DISTANCES_AND_MYTO"].keys())
-                        s_city = st.selectbox("Start Point", ["+ NEW"] + starts)
-                        if s_city == "+ NEW": s_city = st.text_input("New Start Name")
-                    with as2: d_city = st.text_input("New Destination")
+                        s_city = st.selectbox("Start Point", ["+ NEW POINT"] + starts)
+                        if s_city == "+ NEW POINT": s_city = st.text_input("City Name")
+                    with as2: d_city = st.text_input("Destination Name")
                     v_pl, v_eu, v_mftl, v_msolo, v_mbus = 0, 0, 0, 0, 0
                 else:
                     as1, as2 = st.columns(2)
-                    with as1: s_city = st.selectbox("Select Start Point", list(config["DISTANCES_AND_MYTO"].keys()))
+                    with as1: s_city = st.selectbox("Select Start City", list(config["DISTANCES_AND_MYTO"].keys()))
                     with as2: 
                         d_list = list(config["DISTANCES_AND_MYTO"][s_city].keys())
-                        d_city = st.selectbox("Select Destination", d_list) if d_list else None
+                        d_city = st.selectbox("Select Target City", d_list) if d_list else None
+                    
                     if d_city:
                         curr = config["DISTANCES_AND_MYTO"][s_city][d_city]
                         v_pl, v_eu = curr["distPL"], curr["distEU"]
                         v_mftl, v_msolo, v_mbus = curr.get("mytoFTL", 0), curr.get("mytoSolo", 0), curr.get("mytoBus", 0)
 
-                if s_city and d_city and s_city != "+ NEW":
+                if s_city and d_city and s_city != "+ NEW POINT":
                     st.markdown(f"#### Data Editor: {s_city} ➔ {d_city}")
                     ed1, ed2 = st.columns(2)
                     with ed1:
-                        n_pl = st.number_input("Distance PL", value=v_pl)
-                        n_eu = st.number_input("Distance EU", value=v_eu)
+                        n_pl = st.number_input("Distance PL (Kilometry w Polsce)", value=v_pl)
+                        n_eu = st.number_input("Distance EU (Kilometry w Unii)", value=v_eu)
                     with ed2:
-                        n_mftl = st.number_input("Myto FTL", value=v_mftl)
-                        n_msolo = st.number_input("Myto Solo", value=v_msolo)
-                        n_mbus = st.number_input("Myto Bus", value=v_mbus)
+                        n_mftl = st.number_input("Myto FTL (PLN)", value=v_mftl)
+                        n_msolo = st.number_input("Myto Solo (PLN)", value=v_msolo)
+                        n_mbus = st.number_input("Myto Bus (PLN)", value=v_mbus)
 
-                    if st.button("SYNC DATABASE"):
+                    if st.button("SYNC DATABASE WITH CLOUD"):
                         if s_city not in config["DISTANCES_AND_MYTO"]: config["DISTANCES_AND_MYTO"][s_city] = {}
                         config["DISTANCES_AND_MYTO"][s_city][d_city] = {
                             "distPL": n_pl, "distEU": n_eu, "mytoFTL": n_mftl, "mytoSolo": n_msolo, "mytoBus": n_mbus
                         }
+                        # Update global
                         config["EURO_RATE"], config["PRICE"]["fuelPLN"], config["PRICE"]["fuelEUR"] = new_euro, new_f_pl, new_f_eu
+                        
                         if update_github_data(config, file_sha):
-                            st.success("Successfully updated."); st.rerun()
+                            st.success("Vorteza Cloud Database Updated.")
+                            st.rerun()
 
-                    if adm_mode == "Edit / Delete Existing" and st.button("DELETE ROUTE"):
+                    if adm_mode == "Edit / Delete Existing" and st.button("DELETE THIS ROUTE"):
                         del config["DISTANCES_AND_MYTO"][s_city][d_city]
                         if not config["DISTANCES_AND_MYTO"][s_city]: del config["DISTANCES_AND_MYTO"][s_city]
-                        update_github_data(config, file_sha); st.rerun()
+                        update_github_data(config, file_sha)
+                        st.rerun()
 
             elif pwd != "":
-                st.error("Invalid Master Key.")
+                st.error("Authentication Failed.")
+    else:
+        st.error("DATABASE OFFLINE. CHECK CONFIG.JSON.")
