@@ -34,9 +34,9 @@
             "Warszawa": {
                 "distPL": 310,
                 "distEU": 0,
-                "mytoFTL": 220,
-                "mytoSolo": 220,
-                "mytoBus": 110
+                "mytoFTL": 13.63,
+                "mytoSolo": 13.63,
+                "mytoBus": 0.0
             },
             "Gdańsk": {
                 "distPL": 330,
