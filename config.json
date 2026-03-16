@@ -74,11 +74,11 @@
                 "mytoBus": 60.0
             },
             "Hamburg": {
-                "distPL": 500,
-                "distEU": 700,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 232,
+                "distEU": 342,
+                "mytoFTL": 128.95,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Monachium": {
                 "distPL": 300,
