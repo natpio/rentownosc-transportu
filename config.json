@@ -74,7 +74,7 @@
                 "mytoBus": 60.0
             },
             "Hamburg": {
-                "distPL": 232,
+                "distPL": 233,
                 "distEU": 342,
                 "mytoFTL": 128.95,
                 "mytoSolo": 0.0,
