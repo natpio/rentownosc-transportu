@@ -496,11 +496,11 @@
                 "mytoBus": 0.0
             },
             "Barcelona": {
-                "distPL": 470,
-                "distEU": 2100,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distPL": 514,
+                "distEU": 1832,
+                "mytoFTL": 622.12,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Madryt": {
                 "distPL": 514,
