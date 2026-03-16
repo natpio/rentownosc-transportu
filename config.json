@@ -354,11 +354,11 @@
                 "mytoBus": 45
             },
             "Wrocław": {
-                "distPL": 180,
+                "distPL": 176,
                 "distEU": 0,
-                "mytoFTL": 80,
-                "mytoSolo": 80,
-                "mytoBus": 40
+                "mytoFTL": 7.92,
+                "mytoSolo": 80.0,
+                "mytoBus": 40.0
             },
             "Kraków": {
                 "distPL": 380,
