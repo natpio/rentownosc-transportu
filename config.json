@@ -377,11 +377,11 @@
                 "mytoBus": 110.0
             },
             "Gdańsk": {
-                "distPL": 350,
+                "distPL": 349,
                 "distEU": 0,
-                "mytoFTL": 250,
-                "mytoSolo": 250,
-                "mytoBus": 125
+                "mytoFTL": 15.8,
+                "mytoSolo": 250.0,
+                "mytoBus": 125.0
             },
             "Kielce": {
                 "distPL": 180,
