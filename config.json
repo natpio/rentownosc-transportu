@@ -671,11 +671,11 @@
                 "mytoBus": 175
             },
             "Turyn": {
-                "distPL": 550,
-                "distEU": 1150,
-                "mytoFTL": 380,
-                "mytoSolo": 380,
-                "mytoBus": 190
+                "distPL": 356,
+                "distEU": 1278,
+                "mytoFTL": 461.57,
+                "mytoSolo": 380.0,
+                "mytoBus": 190.0
             },
             "Bratysława": {
                 "distPL": 400,
