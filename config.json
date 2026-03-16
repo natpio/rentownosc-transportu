@@ -270,11 +270,11 @@
                 "mytoBus": 0
             },
             "Kielce": {
-                "distPL": 780,
+                "distPL": 363,
                 "distEU": 0,
-                "mytoFTL": 600,
-                "mytoSolo": 600,
-                "mytoBus": 300
+                "mytoFTL": 11.99,
+                "mytoSolo": 600.0,
+                "mytoBus": 300.0
             },
             "Stuttgart": {
                 "distPL": 200,
