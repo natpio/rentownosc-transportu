@@ -39,11 +39,11 @@
                 "mytoBus": 0.0
             },
             "Gdańsk": {
-                "distPL": 330,
+                "distPL": 313,
                 "distEU": 0,
-                "mytoFTL": 280,
-                "mytoSolo": 280,
-                "mytoBus": 140
+                "mytoFTL": 22.33,
+                "mytoSolo": 280.0,
+                "mytoBus": 140.0
             },
             "Gorzów Wielkopolski": {
                 "distPL": 134,
