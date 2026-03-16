@@ -312,11 +312,11 @@
                 "mytoBus": 65.0
             },
             "Antwerpia": {
-                "distPL": 200,
-                "distEU": 880,
-                "mytoFTL": 130,
-                "mytoSolo": 130,
-                "mytoBus": 65
+                "distPL": 172,
+                "distEU": 822,
+                "mytoFTL": 259.03,
+                "mytoSolo": 130.0,
+                "mytoBus": 65.0
             },
             "Oslo": {
                 "distPL": 600,
