@@ -552,11 +552,11 @@
                 "mytoBus": 0.0
             },
             "Manchester": {
-                "distPL": 500,
-                "distEU": 3000,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 470,
+                "distEU": 952,
+                "mytoFTL": 356.28,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Amsterdam": {
                 "distPL": 470,
