@@ -622,11 +622,11 @@
                 "mytoBus": 175.0
             },
             "Essen": {
-                "distPL": 470,
-                "distEU": 750,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distPL": 469,
+                "distEU": 596,
+                "mytoFTL": 345.09,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Strasburg": {
                 "distPL": 470,
