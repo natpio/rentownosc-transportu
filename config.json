@@ -699,11 +699,11 @@
                 "mytoBus": 90.0
             },
             "Kraków": {
-                "distPL": 300,
+                "distPL": 291,
                 "distEU": 0,
-                "mytoFTL": 120,
-                "mytoSolo": 120,
-                "mytoBus": 60
+                "mytoFTL": 30.99,
+                "mytoSolo": 120.0,
+                "mytoBus": 60.0
             }
         },
         "Gdańsk": {
