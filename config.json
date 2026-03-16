@@ -616,10 +616,10 @@
             },
             "Stuttgart": {
                 "distPL": 470,
-                "distEU": 650,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distEU": 655,
+                "mytoFTL": 208.36,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Essen": {
                 "distPL": 470,
