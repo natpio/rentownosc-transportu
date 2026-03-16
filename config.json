@@ -53,8 +53,8 @@
                 "mytoBus": 29.32
             },
             "Berlin": {
-                "distPL": 274,
-                "distEU": 100,
+                "distPL": 172,
+                "distEU": 101,
                 "mytoFTL": 77.77,
                 "mytoSolo": 120.0,
                 "mytoBus": 60.0
