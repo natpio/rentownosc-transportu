@@ -235,11 +235,11 @@
                 "mytoBus": 0.0
             },
             "Sztokholm": {
-                "distPL": 600,
-                "distEU": 2100,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 342,
+                "distEU": 67,
+                "mytoFTL": 19.46,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Wiedeń": {
                 "distPL": 350,
