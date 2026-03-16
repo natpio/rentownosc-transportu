@@ -539,10 +539,10 @@
             },
             "Londyn": {
                 "distPL": 470,
-                "distEU": 1150,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distEU": 914,
+                "mytoFTL": 355.43,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Liverpool": {
                 "distPL": 500,
