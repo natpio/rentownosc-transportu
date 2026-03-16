@@ -291,11 +291,11 @@
                 "mytoBus": 65.0
             },
             "Strasburg": {
-                "distPL": 200,
-                "distEU": 850,
-                "mytoFTL": 140,
-                "mytoSolo": 140,
-                "mytoBus": 70
+                "distPL": 171,
+                "distEU": 1700,
+                "mytoFTL": 364.1,
+                "mytoSolo": 140.0,
+                "mytoBus": 70.0
             },
             "Bordeaux": {
                 "distPL": 200,
