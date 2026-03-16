@@ -370,11 +370,11 @@
         },
         "Warszawa": {
             "Poznań": {
-                "distPL": 310,
+                "distPL": 352,
                 "distEU": 0,
-                "mytoFTL": 220,
-                "mytoSolo": 220,
-                "mytoBus": 110
+                "mytoFTL": 21.85,
+                "mytoSolo": 220.0,
+                "mytoBus": 110.0
             },
             "Gdańsk": {
                 "distPL": 350,
