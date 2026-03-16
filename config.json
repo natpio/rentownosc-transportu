@@ -347,11 +347,11 @@
                 "mytoBus": 70
             },
             "Brno": {
-                "distPL": 220,
-                "distEU": 250,
-                "mytoFTL": 90,
-                "mytoSolo": 90,
-                "mytoBus": 45
+                "distPL": 298,
+                "distEU": 168,
+                "mytoFTL": 17.12,
+                "mytoSolo": 90.0,
+                "mytoBus": 45.0
             },
             "Wrocław": {
                 "distPL": 176,
