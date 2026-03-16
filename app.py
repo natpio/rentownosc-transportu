@@ -313,7 +313,7 @@ else:
                         n_msolo = st.number_input("Road Tolls Solo (EURO)", value=float(v_msolo), step=0.1)
                         n_mbus = st.number_input("Road Tolls Bus (EURO)", value=float(v_mbus), step=0.1)
 
-                    if st.button("SAVE DATA TO GITHUB CLOUD"):
+                    if st.button("SAVE"):
                         if s_city not in config["DISTANCES_AND_MYTO"]: config["DISTANCES_AND_MYTO"][s_city] = {}
                         config["DISTANCES_AND_MYTO"][s_city][d_city] = {
                             "distPL": n_pl, "distEU": n_eu, 
