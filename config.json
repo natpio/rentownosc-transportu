@@ -630,10 +630,10 @@
             },
             "Strasburg": {
                 "distPL": 470,
-                "distEU": 850,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distEU": 787,
+                "mytoFTL": 255.43,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Bordeaux": {
                 "distPL": 470,
