@@ -319,11 +319,11 @@
                 "mytoBus": 65.0
             },
             "Oslo": {
-                "distPL": 600,
-                "distEU": 1200,
-                "mytoFTL": 250,
-                "mytoSolo": 250,
-                "mytoBus": 125
+                "distPL": 331,
+                "distEU": 592,
+                "mytoFTL": 69.75,
+                "mytoSolo": 250.0,
+                "mytoBus": 125.0
             },
             "Walencja": {
                 "distPL": 240,
