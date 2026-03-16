@@ -116,11 +116,11 @@
                 "mytoBus": 60.0
             },
             "Lyon": {
-                "distPL": 180,
-                "distEU": 1400,
-                "mytoFTL": 120,
-                "mytoSolo": 120,
-                "mytoBus": 60
+                "distPL": 237,
+                "distEU": 183,
+                "mytoFTL": 349.55,
+                "mytoSolo": 120.0,
+                "mytoBus": 60.0
             },
             "Cannes/Nicea": {
                 "distPL": 500,
