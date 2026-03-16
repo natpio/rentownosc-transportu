@@ -235,9 +235,9 @@
                 "mytoBus": 0.0
             },
             "Sztokholm": {
-                "distPL": 343,
-                "distEU": 67,
-                "mytoFTL": 55.49,
+                "distPL": 341,
+                "distEU": 68,
+                "mytoFTL": 19.46,
                 "mytoSolo": 0.0,
                 "mytoBus": 0.0
             },
