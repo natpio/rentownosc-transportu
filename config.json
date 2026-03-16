@@ -475,11 +475,11 @@
                 "mytoBus": 0
             },
             "Tuluza": {
-                "distPL": 500,
-                "distEU": 3500,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 514,
+                "distEU": 1689,
+                "mytoFTL": 507.76,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Mediolan": {
                 "distPL": 356,
