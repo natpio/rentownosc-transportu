@@ -46,9 +46,9 @@
                 "mytoBus": 140.0
             },
             "Gorzów Wielkopolski": {
-                "distPL": 134,
+                "distPL": 151,
                 "distEU": 0,
-                "mytoFTL": 63.76,
+                "mytoFTL": 13.63,
                 "mytoSolo": 7.4,
                 "mytoBus": 29.32
             },
