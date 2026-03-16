@@ -560,10 +560,10 @@
             },
             "Amsterdam": {
                 "distPL": 470,
-                "distEU": 650,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distEU": 729,
+                "mytoFTL": 345.47,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Bruksela": {
                 "distPL": 500,
