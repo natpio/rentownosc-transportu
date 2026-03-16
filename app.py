@@ -14,7 +14,6 @@ try:
 except Exception as e:
     GITHUB_TOKEN = "BRAK"
     USER_DB = {}
-    st.error(f"Błąd konfiguracji secrets: {e}")
 
 REPO_OWNER = "natpio"
 REPO_NAME = "rentownosc-transportu"
@@ -32,6 +31,7 @@ def get_base64_of_bin_file(bin_file):
         return ""
 
 def get_github_data():
+    """Pobiera plik konfiguracyjny z GitHub API."""
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     try:
@@ -41,18 +41,25 @@ def get_github_data():
             decoded = base64.b64decode(content['content']).decode('utf-8')
             return json.loads(decoded), content['sha']
         else:
-            st.error(f"GitHub API Error: {response.status_code} - {response.text}")
+            if st.session_state.get("authenticated"):
+                st.error(f"Błąd GitHub API: {response.status_code} - {response.text}")
             return None, None
     except Exception as e:
-        st.error(f"Błąd połączenia z GitHub: {e}")
+        if st.session_state.get("authenticated"):
+            st.error(f"Błąd połączenia z bazą Cloud: {e}")
         return None, None
 
 def update_github_data(new_data, sha):
+    """Aktualizuje plik konfiguracyjny na GitHubie."""
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     updated_content = json.dumps(new_data, indent=4, ensure_ascii=False)
     encoded = base64.b64encode(updated_content.encode('utf-8')).decode('utf-8')
-    payload = {"message": "Update from VORTEZA FLOW Interface", "content": encoded, "sha": sha}
+    payload = {
+        "message": "Update from VORTEZA FLOW Interface",
+        "content": encoded,
+        "sha": sha
+    }
     res = requests.put(url, headers=headers, json=payload)
     return res.status_code in [200, 201]
 
@@ -60,6 +67,7 @@ def update_github_data(new_data, sha):
 # SYSTEM LOGOWANIA
 # =========================================================
 def check_password():
+    """Zarządza dostępem do aplikacji."""
     if "authenticated" not in st.session_state:
         st.session_state["authenticated"] = False
 
@@ -83,7 +91,7 @@ def check_password():
     return True
 
 # =========================================================
-# STYLIZACJA VORTEZA SYSTEMS
+# STYLIZACJA VORTEZA SYSTEMS (SQM STYLE)
 # =========================================================
 def apply_vorteza_theme():
     bin_str = get_base64_of_bin_file('bg_vorteza.png')
@@ -139,7 +147,6 @@ def apply_vorteza_theme():
                 border: 1px solid #444 !important;
             }
             
-            /* Kontener dla kart */
             .vorteza-card {
                 background-color: var(--v-panel);
                 padding: 30px;
@@ -224,10 +231,11 @@ if check_password():
             st.rerun()
 
     if GITHUB_TOKEN == "BRAK":
-        st.error("SYSTEM HALT: GITHUB_TOKEN MISSING IN SECRETS.")
+        st.error("SYSTEM HALT: GITHUB_TOKEN MISSING.")
     else:
         config, file_sha = get_github_data()
 
+        # Renderujemy zakładki TYLKO jeśli dane zostały pobrane pomyślnie
         if config:
             tab1, tab2 = st.tabs(["📊 MARGIN ANALYZER", "⚙️ SYSTEM CORE"])
 
@@ -299,8 +307,6 @@ if check_password():
                             </div>
                         """, unsafe_allow_html=True)
                         st.markdown('</div>', unsafe_allow_html=True)
-        else:
-            st.warning("Nie udało się pobrać danych konfiguracyjnych z bazy Cloud (GitHub). Sprawdź połączenie lub uprawnienia tokena.")
 
             # --- TAB 2: SYSTEM CORE ---
             with tab2:
@@ -332,12 +338,15 @@ if check_password():
                         with as2: 
                             d_list = list(config["DISTANCES_AND_MYTO"][s_city].keys())
                             d_city = st.selectbox("Select Target City", d_list) if d_list else None
+                        
                         if d_city:
                             curr = config["DISTANCES_AND_MYTO"][s_city][d_city]
                             v_pl, v_eu = curr["distPL"], curr["distEU"]
                             v_mftl = curr.get("mytoFTL", 0)
                             v_msolo = curr.get("mytoSolo", 0)
                             v_mbus = curr.get("mytoBus", 0)
+                        else:
+                            v_pl, v_eu, v_mftl, v_msolo, v_mbus = 0, 0, 0, 0, 0
 
                     if s_city and d_city and s_city != "+ NEW":
                         st.markdown(f"#### Edit Entry: {s_city} ➔ {d_city}")
@@ -351,18 +360,29 @@ if check_password():
                             n_mbus = st.number_input("Road Tolls Bus (EURO)", value=float(v_mbus), step=0.1)
 
                         if st.button("SAVE"):
-                            if s_city not in config["DISTANCES_AND_MYTO"]: config["DISTANCES_AND_MYTO"][s_city] = {}
+                            if s_city not in config["DISTANCES_AND_MYTO"]: 
+                                config["DISTANCES_AND_MYTO"][s_city] = {}
                             config["DISTANCES_AND_MYTO"][s_city][d_city] = {
                                 "distPL": n_pl, "distEU": n_eu, 
                                 "mytoFTL": n_mftl, "mytoSolo": n_msolo, "mytoBus": n_mbus
                             }
-                            config["EURO_RATE"], config["PRICE"]["fuelPLN"], config["PRICE"]["fuelEUR"] = new_euro, new_f_pl, new_f_eu
+                            # Aktualizacja stałych ekonomicznych
+                            config["EURO_RATE"] = new_euro
+                            config["PRICE"]["fuelPLN"] = new_f_pl
+                            config["PRICE"]["fuelEUR"] = new_f_eu
+                            
                             if update_github_data(config, file_sha):
-                                st.success("Cloud Synchronized Successfully."); st.rerun()
+                                st.success("Cloud Synchronized Successfully.")
+                                st.rerun()
 
                         if adm_mode == "Edit / Delete Existing" and st.button("DELETE THIS ENTRY PERMANENTLY"):
                             del config["DISTANCES_AND_MYTO"][s_city][d_city]
-                            if not config["DISTANCES_AND_MYTO"][s_city]: del config["DISTANCES_AND_MYTO"][s_city]
-                            update_github_data(config, file_sha); st.rerun()
+                            if not config["DISTANCES_AND_MYTO"][s_city]: 
+                                del config["DISTANCES_AND_MYTO"][s_city]
+                            if update_github_data(config, file_sha):
+                                st.success("Entry Deleted.")
+                                st.rerun()
                 else:
-                    st.warning("Ta sekcja jest dostępna tylko dla administratora.")
+                    st.warning("Ta sekcja jest dostępna tylko dla użytkownika o uprawnieniach 'admin'.")
+        else:
+            st.error("Brak dostępu do danych konfiguracyjnych. Sprawdź poświadczenia GitHub API.")
