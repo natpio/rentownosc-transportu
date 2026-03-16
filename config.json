@@ -319,9 +319,9 @@
                 "mytoBus": 65.0
             },
             "Oslo": {
-                "distPL": 331,
-                "distEU": 592,
-                "mytoFTL": 69.75,
+                "distPL": 524,
+                "distEU": 160,
+                "mytoFTL": 78.0,
                 "mytoSolo": 250.0,
                 "mytoBus": 125.0
             },
