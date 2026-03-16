@@ -81,11 +81,11 @@
                 "mytoBus": 0.0
             },
             "Monachium": {
-                "distPL": 300,
-                "distEU": 600,
-                "mytoFTL": 150,
-                "mytoSolo": 150,
-                "mytoBus": 75
+                "distPL": 237,
+                "distEU": 271,
+                "mytoFTL": 124.81,
+                "mytoSolo": 150.0,
+                "mytoBus": 75.0
             },
             "Frankfurt nad Menem": {
                 "distPL": 500,
