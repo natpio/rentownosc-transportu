@@ -398,11 +398,11 @@
                 "mytoBus": 175.0
             },
             "Berlin": {
-                "distPL": 470,
-                "distEU": 100,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distPL": 540,
+                "distEU": 130,
+                "mytoFTL": 59.69,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Lipsk": {
                 "distPL": 470,
