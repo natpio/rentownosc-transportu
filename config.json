@@ -67,11 +67,11 @@
                 "mytoBus": 60.0
             },
             "Hannover": {
-                "distPL": 250,
-                "distEU": 350,
-                "mytoFTL": 120,
-                "mytoSolo": 120,
-                "mytoBus": 60
+                "distPL": 172,
+                "distEU": 353,
+                "mytoFTL": 164.94,
+                "mytoSolo": 120.0,
+                "mytoBus": 60.0
             },
             "Hamburg": {
                 "distPL": 500,
