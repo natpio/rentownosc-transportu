@@ -10,16 +10,15 @@ from PIL import Image
 # =========================================================
 try:
     GITHUB_TOKEN = st.secrets["G_TOKEN"]
-    # Pobieranie bazy użytkowników z secrets
     USER_DB = st.secrets["credentials"]["usernames"]
-except:
+except Exception as e:
     GITHUB_TOKEN = "BRAK"
     USER_DB = {}
+    st.error(f"Błąd konfiguracji secrets: {e}")
 
 REPO_OWNER = "natpio"
 REPO_NAME = "rentownosc-transportu"
 FILE_PATH = "config.json"
-ADMIN_PASSWORD_OLD = "admin" # Możesz to usunąć, jeśli tab2 też ma być na login
 
 # =========================================================
 # FUNKCJE POMOCNICZE DANYCH
@@ -35,12 +34,18 @@ def get_base64_of_bin_file(bin_file):
 def get_github_data():
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        content = response.json()
-        decoded = base64.b64decode(content['content']).decode('utf-8')
-        return json.loads(decoded), content['sha']
-    return None, None
+    try:
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            content = response.json()
+            decoded = base64.b64decode(content['content']).decode('utf-8')
+            return json.loads(decoded), content['sha']
+        else:
+            st.error(f"GitHub API Error: {response.status_code} - {response.text}")
+            return None, None
+    except Exception as e:
+        st.error(f"Błąd połączenia z GitHub: {e}")
+        return None, None
 
 def update_github_data(new_data, sha):
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
@@ -55,29 +60,30 @@ def update_github_data(new_data, sha):
 # SYSTEM LOGOWANIA
 # =========================================================
 def check_password():
-    """Zwraca True, jeśli użytkownik wpisał poprawne dane."""
-    def login_form():
-        with st.form("Login"):
-            st.markdown("### VORTEZA | SECURE ACCESS")
-            user = st.text_input("Użytkownik")
-            password = st.text_input("Hasło", type="password")
-            submit = st.form_submit_button("ZALOGUJ")
-            
-            if submit:
-                if user in USER_DB and USER_DB[user] == password:
-                    st.session_state["authenticated"] = True
-                    st.session_state["username"] = user
-                    st.rerun()
-                else:
-                    st.error("Nieprawidłowe dane logowania.")
-
     if "authenticated" not in st.session_state:
-        login_form()
+        st.session_state["authenticated"] = False
+
+    if not st.session_state["authenticated"]:
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            with st.form("Login"):
+                st.markdown("### VORTEZA | SECURE ACCESS")
+                user = st.text_input("Użytkownik")
+                password = st.text_input("Hasło", type="password")
+                submit = st.form_submit_button("ZALOGUJ")
+                
+                if submit:
+                    if user in USER_DB and USER_DB[user] == password:
+                        st.session_state["authenticated"] = True
+                        st.session_state["username"] = user
+                        st.rerun()
+                    else:
+                        st.error("Nieprawidłowe dane logowania.")
         return False
     return True
 
 # =========================================================
-# STYLIZACJA VORTEZA SYSTEMS (SQM STYLE)
+# STYLIZACJA VORTEZA SYSTEMS
 # =========================================================
 def apply_vorteza_theme():
     bin_str = get_base64_of_bin_file('bg_vorteza.png')
@@ -133,13 +139,15 @@ def apply_vorteza_theme():
                 border: 1px solid #444 !important;
             }
             
-            div[data-testid="stVerticalBlock"] > div:has(div.vorteza-card) {
+            /* Kontener dla kart */
+            .vorteza-card {
                 background-color: var(--v-panel);
                 padding: 30px;
                 border-radius: 5px;
                 border-left: 5px solid var(--v-copper);
                 box-shadow: 0 10px 40px rgba(0,0,0,0.8);
                 backdrop-filter: blur(15px);
+                margin-bottom: 20px;
             }
 
             .route-preview {
@@ -196,7 +204,7 @@ st.set_page_config(page_title="VORTEZA FLOW | SQM", layout="wide")
 apply_vorteza_theme()
 
 if check_password():
-    # Nagłówek aplikacji (widoczny po zalogowaniu)
+    # Nagłówek aplikacji
     col_logo, col_title, col_logout = st.columns([1, 4, 1])
     with col_logo:
         try:
@@ -216,7 +224,7 @@ if check_password():
             st.rerun()
 
     if GITHUB_TOKEN == "BRAK":
-        st.error("SYSTEM HALT: GITHUB_TOKEN MISSING.")
+        st.error("SYSTEM HALT: GITHUB_TOKEN MISSING IN SECRETS.")
     else:
         config, file_sha = get_github_data()
 
@@ -291,10 +299,11 @@ if check_password():
                             </div>
                         """, unsafe_allow_html=True)
                         st.markdown('</div>', unsafe_allow_html=True)
+        else:
+            st.warning("Nie udało się pobrać danych konfiguracyjnych z bazy Cloud (GitHub). Sprawdź połączenie lub uprawnienia tokena.")
 
             # --- TAB 2: SYSTEM CORE ---
             with tab2:
-                # Tutaj możesz zostawić dodatkowe hasło lub polegać tylko na loginie (jeśli user == 'admin')
                 st.subheader("Vorteza Master Access")
                 if st.session_state.get("username") == "admin":
                     st.success(f"Authorized as {st.session_state.username}")
