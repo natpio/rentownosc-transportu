@@ -242,11 +242,11 @@
                 "mytoBus": 0.0
             },
             "Wiedeń": {
-                "distPL": 350,
-                "distEU": 400,
-                "mytoFTL": 150,
-                "mytoSolo": 150,
-                "mytoBus": 75
+                "distPL": 297,
+                "distEU": 296,
+                "mytoFTL": 63.53,
+                "mytoSolo": 150.0,
+                "mytoBus": 75.0
             },
             "Praga": {
                 "distPL": 220,
