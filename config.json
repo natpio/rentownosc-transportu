@@ -692,11 +692,11 @@
                 "mytoBus": 150
             },
             "Wrocław": {
-                "distPL": 350,
+                "distPL": 363,
                 "distEU": 0,
-                "mytoFTL": 180,
-                "mytoSolo": 180,
-                "mytoBus": 90
+                "mytoFTL": 24.0,
+                "mytoSolo": 180.0,
+                "mytoBus": 90.0
             },
             "Kraków": {
                 "distPL": 300,
