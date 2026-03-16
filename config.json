@@ -228,11 +228,11 @@
                 "mytoBus": 60.0
             },
             "Kopenhaga": {
-                "distPL": 600,
-                "distEU": 800,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 327,
+                "distEU": 60,
+                "mytoFTL": 259.16,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Sztokholm": {
                 "distPL": 600,
