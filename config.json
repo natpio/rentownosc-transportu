@@ -144,11 +144,11 @@
                 "mytoBus": 90.0
             },
             "Rzym": {
-                "distPL": 500,
-                "distEU": 3000,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 310,
+                "distEU": 1352,
+                "mytoFTL": 337.72,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Barcelona": {
                 "distPL": 180,
