@@ -651,10 +651,10 @@
             },
             "Antwerpia": {
                 "distPL": 470,
-                "distEU": 880,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distEU": 822,
+                "mytoFTL": 354.06,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Oslo": {
                 "distPL": 524,
