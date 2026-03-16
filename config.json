@@ -137,11 +137,11 @@
                 "mytoBus": 0.0
             },
             "Mediolan": {
-                "distPL": 350,
-                "distEU": 1000,
-                "mytoFTL": 180,
-                "mytoSolo": 180,
-                "mytoBus": 90
+                "distPL": 236,
+                "distEU": 1034,
+                "mytoFTL": 458.37,
+                "mytoSolo": 180.0,
+                "mytoBus": 90.0
             },
             "Rzym": {
                 "distPL": 500,
