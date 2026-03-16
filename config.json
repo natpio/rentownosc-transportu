@@ -447,11 +447,11 @@
                 "mytoBus": 0.0
             },
             "Kolonia/Dusseldorf": {
-                "distPL": 500,
-                "distEU": 1400,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 514,
+                "distEU": 678,
+                "mytoFTL": 295.91,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Paryż": {
                 "distPL": 470,
