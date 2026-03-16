@@ -109,11 +109,11 @@
                 "mytoBus": 0.0
             },
             "Paryż": {
-                "distPL": 180,
-                "distEU": 1100,
-                "mytoFTL": 120,
-                "mytoSolo": 120,
-                "mytoBus": 60
+                "distPL": 172,
+                "distEU": 1144,
+                "mytoFTL": 355.82,
+                "mytoSolo": 120.0,
+                "mytoBus": 60.0
             },
             "Lyon": {
                 "distPL": 180,
