@@ -263,11 +263,11 @@
                 "mytoBus": 0.0
             },
             "Sofia": {
-                "distPL": 500,
-                "distEU": 2500,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 388,
+                "distEU": 1113,
+                "mytoFTL": 332.64,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Kielce": {
                 "distPL": 363,
