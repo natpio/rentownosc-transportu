@@ -221,11 +221,11 @@
                 "mytoBus": 60.0
             },
             "Bruksela": {
-                "distPL": 180,
-                "distEU": 750,
-                "mytoFTL": 120,
-                "mytoSolo": 120,
-                "mytoBus": 60
+                "distPL": 171,
+                "distEU": 865,
+                "mytoFTL": 270.0,
+                "mytoSolo": 120.0,
+                "mytoBus": 60.0
             },
             "Kopenhaga": {
                 "distPL": 600,
