@@ -636,11 +636,11 @@
                 "mytoBus": 175.0
             },
             "Bordeaux": {
-                "distPL": 470,
-                "distEU": 1700,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distPL": 514,
+                "distEU": 1665,
+                "mytoFTL": 531.9,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Rotterdam": {
                 "distPL": 470,
