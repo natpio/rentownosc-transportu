@@ -644,10 +644,10 @@
             },
             "Rotterdam": {
                 "distPL": 470,
-                "distEU": 780,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "distEU": 760,
+                "mytoFTL": 345.47,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Antwerpia": {
                 "distPL": 470,
