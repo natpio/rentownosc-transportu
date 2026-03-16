@@ -326,11 +326,11 @@
                 "mytoBus": 125
             },
             "Walencja": {
-                "distPL": 200,
-                "distEU": 2450,
-                "mytoFTL": 220,
-                "mytoSolo": 220,
-                "mytoBus": 110
+                "distPL": 240,
+                "distEU": 1481,
+                "mytoFTL": 592.01,
+                "mytoSolo": 220.0,
+                "mytoBus": 110.0
             },
             "Turyn": {
                 "distPL": 236,
