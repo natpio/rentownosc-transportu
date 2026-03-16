@@ -440,11 +440,11 @@
                 "mytoBus": 0
             },
             "Norymberga": {
-                "distPL": 500,
-                "distEU": 1000,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 470,
+                "distEU": 474,
+                "mytoFTL": 147.41,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Kolonia/Dusseldorf": {
                 "distPL": 500,
