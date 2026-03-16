@@ -391,11 +391,11 @@
                 "mytoBus": 40.0
             },
             "Gorzów Wielkopolski": {
-                "distPL": 470,
+                "distPL": 484,
                 "distEU": 0,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "mytoFTL": 7.55,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Berlin": {
                 "distPL": 470,
