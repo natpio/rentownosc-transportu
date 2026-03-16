@@ -165,11 +165,11 @@
                 "mytoBus": 0.0
             },
             "Sewilla": {
-                "distPL": 500,
-                "distEU": 5800,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 240,
+                "distEU": 2129,
+                "mytoFTL": 592.01,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Lizbona": {
                 "distPL": 500,
