@@ -31,168 +31,1104 @@
     },
     "DISTANCES_AND_MYTO": {
         "Poznań": {
-            "Warszawa": { "distPL": 310, "distEU": 0, "mytoFTL": 13.63, "mytoSolo": 13.63, "mytoBus": 0.0 },
-            "Gdańsk": { "distPL": 330, "distEU": 0, "mytoFTL": 280, "mytoSolo": 280, "mytoBus": 140 },
-            "Gorzów Wielkopolski": { "distPL": 134, "distEU": 0, "mytoFTL": 63.76, "mytoSolo": 7.4, "mytoBus": 29.32 },
-            "Berlin": { "distPL": 180, "distEU": 100, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Lipsk": { "distPL": 250, "distEU": 300, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Hannover": { "distPL": 250, "distEU": 350, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Hamburg": { "distPL": 500, "distEU": 700, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Monachium": { "distPL": 300, "distEU": 600, "mytoFTL": 150, "mytoSolo": 150, "mytoBus": 75 },
-            "Frankfurt nad Menem": { "distPL": 500, "distEU": 1200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Norymberga": { "distPL": 500, "distEU": 1000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Kolonia/Dusseldorf": { "distPL": 500, "distEU": 1400, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Paryż": { "distPL": 180, "distEU": 1100, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Lyon": { "distPL": 180, "distEU": 1400, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Cannes/Nicea": { "distPL": 500, "distEU": 3200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Tuluza": { "distPL": 500, "distEU": 3500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Mediolan": { "distPL": 350, "distEU": 1000, "mytoFTL": 180, "mytoSolo": 180, "mytoBus": 90 },
-            "Rzym": { "distPL": 500, "distEU": 3000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Barcelona": { "distPL": 180, "distEU": 2100, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Madryt": { "distPL": 500, "distEU": 4900, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sewilla": { "distPL": 500, "distEU": 5800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Lizbona": { "distPL": 500, "distEU": 5900, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Genewa": { "distPL": 500, "distEU": 1800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Bazylea": { "distPL": 500, "distEU": 1500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Londyn": { "distPL": 180, "distEU": 1150, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Liverpool": { "distPL": 500, "distEU": 3100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Manchester": { "distPL": 500, "distEU": 3000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Amsterdam": { "distPL": 180, "distEU": 650, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Bruksela": { "distPL": 180, "distEU": 750, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 },
-            "Kopenhaga": { "distPL": 600, "distEU": 800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sztokholm": { "distPL": 600, "distEU": 2100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Wiedeń": { "distPL": 350, "distEU": 400, "mytoFTL": 150, "mytoSolo": 150, "mytoBus": 75 },
-            "Praga": { "distPL": 220, "distEU": 200, "mytoFTL": 80, "mytoSolo": 80, "mytoBus": 40 },
-            "Budapeszt": { "distPL": 500, "distEU": 1000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sofia": { "distPL": 500, "distEU": 2500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Kielce": { "distPL": 780, "distEU": 0, "mytoFTL": 600, "mytoSolo": 600, "mytoBus": 300 },
-            "Stuttgart": { "distPL": 200, "distEU": 650, "mytoFTL": 130, "mytoSolo": 130, "mytoBus": 65 },
-            "Essen": { "distPL": 200, "distEU": 750, "mytoFTL": 130, "mytoSolo": 130, "mytoBus": 65 },
-            "Strasburg": { "distPL": 200, "distEU": 850, "mytoFTL": 140, "mytoSolo": 140, "mytoBus": 70 },
-            "Bordeaux": { "distPL": 200, "distEU": 1700, "mytoFTL": 180, "mytoSolo": 180, "mytoBus": 90 },
-            "Rotterdam": { "distPL": 200, "distEU": 780, "mytoFTL": 130, "mytoSolo": 130, "mytoBus": 65 },
-            "Antwerpia": { "distPL": 200, "distEU": 880, "mytoFTL": 130, "mytoSolo": 130, "mytoBus": 65 },
-            "Oslo": { "distPL": 600, "distEU": 1200, "mytoFTL": 250, "mytoSolo": 250, "mytoBus": 125 },
-            "Walencja": { "distPL": 200, "distEU": 2450, "mytoFTL": 220, "mytoSolo": 220, "mytoBus": 110 },
-            "Turyn": { "distPL": 350, "distEU": 1150, "mytoFTL": 190, "mytoSolo": 190, "mytoBus": 95 },
-            "Bratysława": { "distPL": 350, "distEU": 350, "mytoFTL": 140, "mytoSolo": 140, "mytoBus": 70 },
-            "Brno": { "distPL": 220, "distEU": 250, "mytoFTL": 90, "mytoSolo": 90, "mytoBus": 45 },
-            "Wrocław": { "distPL": 180, "distEU": 0, "mytoFTL": 80, "mytoSolo": 80, "mytoBus": 40 },
-            "Kraków": { "distPL": 380, "distEU": 0, "mytoFTL": 150, "mytoSolo": 150, "mytoBus": 75 }
+            "Warszawa": {
+                "distPL": 354,
+                "distEU": 0,
+                "mytoFTL": 23.07,
+                "mytoSolo": 13.63,
+                "mytoBus": 0.0
+            },
+            "Gdańsk": {
+                "distPL": 330,
+                "distEU": 0,
+                "mytoFTL": 280,
+                "mytoSolo": 280,
+                "mytoBus": 140
+            },
+            "Gorzów Wielkopolski": {
+                "distPL": 134,
+                "distEU": 0,
+                "mytoFTL": 63.76,
+                "mytoSolo": 7.4,
+                "mytoBus": 29.32
+            },
+            "Berlin": {
+                "distPL": 180,
+                "distEU": 100,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Lipsk": {
+                "distPL": 250,
+                "distEU": 300,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Hannover": {
+                "distPL": 250,
+                "distEU": 350,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Hamburg": {
+                "distPL": 500,
+                "distEU": 700,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Monachium": {
+                "distPL": 300,
+                "distEU": 600,
+                "mytoFTL": 150,
+                "mytoSolo": 150,
+                "mytoBus": 75
+            },
+            "Frankfurt nad Menem": {
+                "distPL": 500,
+                "distEU": 1200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Norymberga": {
+                "distPL": 500,
+                "distEU": 1000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Kolonia/Dusseldorf": {
+                "distPL": 500,
+                "distEU": 1400,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Paryż": {
+                "distPL": 180,
+                "distEU": 1100,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Lyon": {
+                "distPL": 180,
+                "distEU": 1400,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Cannes/Nicea": {
+                "distPL": 500,
+                "distEU": 3200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Tuluza": {
+                "distPL": 500,
+                "distEU": 3500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Mediolan": {
+                "distPL": 350,
+                "distEU": 1000,
+                "mytoFTL": 180,
+                "mytoSolo": 180,
+                "mytoBus": 90
+            },
+            "Rzym": {
+                "distPL": 500,
+                "distEU": 3000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Barcelona": {
+                "distPL": 180,
+                "distEU": 2100,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Madryt": {
+                "distPL": 500,
+                "distEU": 4900,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sewilla": {
+                "distPL": 500,
+                "distEU": 5800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Lizbona": {
+                "distPL": 500,
+                "distEU": 5900,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Genewa": {
+                "distPL": 500,
+                "distEU": 1800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Bazylea": {
+                "distPL": 500,
+                "distEU": 1500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Londyn": {
+                "distPL": 180,
+                "distEU": 1150,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Liverpool": {
+                "distPL": 500,
+                "distEU": 3100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Manchester": {
+                "distPL": 500,
+                "distEU": 3000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Amsterdam": {
+                "distPL": 180,
+                "distEU": 650,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Bruksela": {
+                "distPL": 180,
+                "distEU": 750,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            },
+            "Kopenhaga": {
+                "distPL": 600,
+                "distEU": 800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sztokholm": {
+                "distPL": 600,
+                "distEU": 2100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Wiedeń": {
+                "distPL": 350,
+                "distEU": 400,
+                "mytoFTL": 150,
+                "mytoSolo": 150,
+                "mytoBus": 75
+            },
+            "Praga": {
+                "distPL": 220,
+                "distEU": 200,
+                "mytoFTL": 80,
+                "mytoSolo": 80,
+                "mytoBus": 40
+            },
+            "Budapeszt": {
+                "distPL": 500,
+                "distEU": 1000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sofia": {
+                "distPL": 500,
+                "distEU": 2500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Kielce": {
+                "distPL": 780,
+                "distEU": 0,
+                "mytoFTL": 600,
+                "mytoSolo": 600,
+                "mytoBus": 300
+            },
+            "Stuttgart": {
+                "distPL": 200,
+                "distEU": 650,
+                "mytoFTL": 130,
+                "mytoSolo": 130,
+                "mytoBus": 65
+            },
+            "Essen": {
+                "distPL": 200,
+                "distEU": 750,
+                "mytoFTL": 130,
+                "mytoSolo": 130,
+                "mytoBus": 65
+            },
+            "Strasburg": {
+                "distPL": 200,
+                "distEU": 850,
+                "mytoFTL": 140,
+                "mytoSolo": 140,
+                "mytoBus": 70
+            },
+            "Bordeaux": {
+                "distPL": 200,
+                "distEU": 1700,
+                "mytoFTL": 180,
+                "mytoSolo": 180,
+                "mytoBus": 90
+            },
+            "Rotterdam": {
+                "distPL": 200,
+                "distEU": 780,
+                "mytoFTL": 130,
+                "mytoSolo": 130,
+                "mytoBus": 65
+            },
+            "Antwerpia": {
+                "distPL": 200,
+                "distEU": 880,
+                "mytoFTL": 130,
+                "mytoSolo": 130,
+                "mytoBus": 65
+            },
+            "Oslo": {
+                "distPL": 600,
+                "distEU": 1200,
+                "mytoFTL": 250,
+                "mytoSolo": 250,
+                "mytoBus": 125
+            },
+            "Walencja": {
+                "distPL": 200,
+                "distEU": 2450,
+                "mytoFTL": 220,
+                "mytoSolo": 220,
+                "mytoBus": 110
+            },
+            "Turyn": {
+                "distPL": 350,
+                "distEU": 1150,
+                "mytoFTL": 190,
+                "mytoSolo": 190,
+                "mytoBus": 95
+            },
+            "Bratysława": {
+                "distPL": 350,
+                "distEU": 350,
+                "mytoFTL": 140,
+                "mytoSolo": 140,
+                "mytoBus": 70
+            },
+            "Brno": {
+                "distPL": 220,
+                "distEU": 250,
+                "mytoFTL": 90,
+                "mytoSolo": 90,
+                "mytoBus": 45
+            },
+            "Wrocław": {
+                "distPL": 180,
+                "distEU": 0,
+                "mytoFTL": 80,
+                "mytoSolo": 80,
+                "mytoBus": 40
+            },
+            "Kraków": {
+                "distPL": 380,
+                "distEU": 0,
+                "mytoFTL": 150,
+                "mytoSolo": 150,
+                "mytoBus": 75
+            }
         },
         "Warszawa": {
-            "Poznań": { "distPL": 310, "distEU": 0, "mytoFTL": 220, "mytoSolo": 220, "mytoBus": 110 },
-            "Gdańsk": { "distPL": 350, "distEU": 0, "mytoFTL": 250, "mytoSolo": 250, "mytoBus": 125 },
-            "Kielce": { "distPL": 180, "distEU": 0, "mytoFTL": 80, "mytoSolo": 80, "mytoBus": 40 },
-            "Gorzów Wielkopolski": { "distPL": 470, "distEU": 0, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Berlin": { "distPL": 470, "distEU": 100, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Lipsk": { "distPL": 470, "distEU": 300, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Hannover": { "distPL": 470, "distEU": 350, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Hamburg": { "distPL": 500, "distEU": 700, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Monachium": { "distPL": 550, "distEU": 600, "mytoFTL": 380, "mytoSolo": 380, "mytoBus": 190 },
-            "Frankfurt nad Menem": { "distPL": 500, "distEU": 1200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Norymberga": { "distPL": 500, "distEU": 1000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Kolonia/Dusseldorf": { "distPL": 500, "distEU": 1400, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Paryż": { "distPL": 470, "distEU": 1100, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Lyon": { "distPL": 470, "distEU": 1400, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Cannes/Nicea": { "distPL": 500, "distEU": 3200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Tuluza": { "distPL": 500, "distEU": 3500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Mediolan": { "distPL": 550, "distEU": 1000, "mytoFTL": 380, "mytoSolo": 380, "mytoBus": 190 },
-            "Rzym": { "distPL": 500, "distEU": 3000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Barcelona": { "distPL": 470, "distEU": 2100, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Madryt": { "distPL": 500, "distEU": 4900, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sewilla": { "distPL": 500, "distEU": 5800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Lizbona": { "distPL": 500, "distEU": 5900, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Genewa": { "distPL": 500, "distEU": 1800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Bazylea": { "distPL": 500, "distEU": 1500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Londyn": { "distPL": 470, "distEU": 1150, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Liverpool": { "distPL": 500, "distEU": 3100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Manchester": { "distPL": 500, "distEU": 3000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Amsterdam": { "distPL": 470, "distEU": 650, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Bruksela": { "distPL": 500, "distEU": 1500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Kopenhaga": { "distPL": 600, "distEU": 800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sztokholm": { "distPL": 600, "distEU": 2100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Wiedeń": { "distPL": 400, "distEU": 350, "mytoFTL": 280, "mytoSolo": 280, "mytoBus": 140 },
-            "Praga": { "distPL": 450, "distEU": 200, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
-            "Budapeszt": { "distPL": 500, "distEU": 1000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sofia": { "distPL": 500, "distEU": 2500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Stuttgart": { "distPL": 470, "distEU": 650, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Essen": { "distPL": 470, "distEU": 750, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Strasburg": { "distPL": 470, "distEU": 850, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Bordeaux": { "distPL": 470, "distEU": 1700, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Rotterdam": { "distPL": 470, "distEU": 780, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Antwerpia": { "distPL": 470, "distEU": 880, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Oslo": { "distPL": 600, "distEU": 1400, "mytoFTL": 400, "mytoSolo": 400, "mytoBus": 200 },
-            "Walencja": { "distPL": 470, "distEU": 2450, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Turyn": { "distPL": 550, "distEU": 1150, "mytoFTL": 380, "mytoSolo": 380, "mytoBus": 190 },
-            "Bratysława": { "distPL": 400, "distEU": 350, "mytoFTL": 280, "mytoSolo": 280, "mytoBus": 140 },
-            "Brno": { "distPL": 450, "distEU": 250, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 },
-            "Wrocław": { "distPL": 350, "distEU": 0, "mytoFTL": 180, "mytoSolo": 180, "mytoBus": 90 },
-            "Kraków": { "distPL": 300, "distEU": 0, "mytoFTL": 120, "mytoSolo": 120, "mytoBus": 60 }
+            "Poznań": {
+                "distPL": 310,
+                "distEU": 0,
+                "mytoFTL": 220,
+                "mytoSolo": 220,
+                "mytoBus": 110
+            },
+            "Gdańsk": {
+                "distPL": 350,
+                "distEU": 0,
+                "mytoFTL": 250,
+                "mytoSolo": 250,
+                "mytoBus": 125
+            },
+            "Kielce": {
+                "distPL": 180,
+                "distEU": 0,
+                "mytoFTL": 80,
+                "mytoSolo": 80,
+                "mytoBus": 40
+            },
+            "Gorzów Wielkopolski": {
+                "distPL": 470,
+                "distEU": 0,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Berlin": {
+                "distPL": 470,
+                "distEU": 100,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Lipsk": {
+                "distPL": 470,
+                "distEU": 300,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Hannover": {
+                "distPL": 470,
+                "distEU": 350,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Hamburg": {
+                "distPL": 500,
+                "distEU": 700,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Monachium": {
+                "distPL": 550,
+                "distEU": 600,
+                "mytoFTL": 380,
+                "mytoSolo": 380,
+                "mytoBus": 190
+            },
+            "Frankfurt nad Menem": {
+                "distPL": 500,
+                "distEU": 1200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Norymberga": {
+                "distPL": 500,
+                "distEU": 1000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Kolonia/Dusseldorf": {
+                "distPL": 500,
+                "distEU": 1400,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Paryż": {
+                "distPL": 470,
+                "distEU": 1100,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Lyon": {
+                "distPL": 470,
+                "distEU": 1400,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Cannes/Nicea": {
+                "distPL": 500,
+                "distEU": 3200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Tuluza": {
+                "distPL": 500,
+                "distEU": 3500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Mediolan": {
+                "distPL": 550,
+                "distEU": 1000,
+                "mytoFTL": 380,
+                "mytoSolo": 380,
+                "mytoBus": 190
+            },
+            "Rzym": {
+                "distPL": 500,
+                "distEU": 3000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Barcelona": {
+                "distPL": 470,
+                "distEU": 2100,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Madryt": {
+                "distPL": 500,
+                "distEU": 4900,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sewilla": {
+                "distPL": 500,
+                "distEU": 5800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Lizbona": {
+                "distPL": 500,
+                "distEU": 5900,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Genewa": {
+                "distPL": 500,
+                "distEU": 1800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Bazylea": {
+                "distPL": 500,
+                "distEU": 1500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Londyn": {
+                "distPL": 470,
+                "distEU": 1150,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Liverpool": {
+                "distPL": 500,
+                "distEU": 3100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Manchester": {
+                "distPL": 500,
+                "distEU": 3000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Amsterdam": {
+                "distPL": 470,
+                "distEU": 650,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Bruksela": {
+                "distPL": 500,
+                "distEU": 1500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Kopenhaga": {
+                "distPL": 600,
+                "distEU": 800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sztokholm": {
+                "distPL": 600,
+                "distEU": 2100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Wiedeń": {
+                "distPL": 400,
+                "distEU": 350,
+                "mytoFTL": 280,
+                "mytoSolo": 280,
+                "mytoBus": 140
+            },
+            "Praga": {
+                "distPL": 450,
+                "distEU": 200,
+                "mytoFTL": 300,
+                "mytoSolo": 300,
+                "mytoBus": 150
+            },
+            "Budapeszt": {
+                "distPL": 500,
+                "distEU": 1000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sofia": {
+                "distPL": 500,
+                "distEU": 2500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Stuttgart": {
+                "distPL": 470,
+                "distEU": 650,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Essen": {
+                "distPL": 470,
+                "distEU": 750,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Strasburg": {
+                "distPL": 470,
+                "distEU": 850,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Bordeaux": {
+                "distPL": 470,
+                "distEU": 1700,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Rotterdam": {
+                "distPL": 470,
+                "distEU": 780,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Antwerpia": {
+                "distPL": 470,
+                "distEU": 880,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Oslo": {
+                "distPL": 600,
+                "distEU": 1400,
+                "mytoFTL": 400,
+                "mytoSolo": 400,
+                "mytoBus": 200
+            },
+            "Walencja": {
+                "distPL": 470,
+                "distEU": 2450,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Turyn": {
+                "distPL": 550,
+                "distEU": 1150,
+                "mytoFTL": 380,
+                "mytoSolo": 380,
+                "mytoBus": 190
+            },
+            "Bratysława": {
+                "distPL": 400,
+                "distEU": 350,
+                "mytoFTL": 280,
+                "mytoSolo": 280,
+                "mytoBus": 140
+            },
+            "Brno": {
+                "distPL": 450,
+                "distEU": 250,
+                "mytoFTL": 300,
+                "mytoSolo": 300,
+                "mytoBus": 150
+            },
+            "Wrocław": {
+                "distPL": 350,
+                "distEU": 0,
+                "mytoFTL": 180,
+                "mytoSolo": 180,
+                "mytoBus": 90
+            },
+            "Kraków": {
+                "distPL": 300,
+                "distEU": 0,
+                "mytoFTL": 120,
+                "mytoSolo": 120,
+                "mytoBus": 60
+            }
         },
         "Gdańsk": {
-            "Poznań": { "distPL": 330, "distEU": 0, "mytoFTL": 280, "mytoSolo": 280, "mytoBus": 140 },
-            "Warszawa": { "distPL": 350, "distEU": 0, "mytoFTL": 250, "mytoSolo": 250, "mytoBus": 125 },
-            "Kielce": { "distPL": 550, "distEU": 0, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Gorzów Wielkopolski": { "distPL": 350, "distEU": 0, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Berlin": { "distPL": 350, "distEU": 180, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Lipsk": { "distPL": 500, "distEU": 600, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Hamburg": { "distPL": 350, "distEU": 350, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Hannover": { "distPL": 350, "distEU": 400, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Monachium": { "distPL": 500, "distEU": 1200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Frankfurt nad Menem": { "distPL": 500, "distEU": 1200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Norymberga": { "distPL": 500, "distEU": 1000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Kolonia/Dusseldorf": { "distPL": 500, "distEU": 1400, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Paryż": { "distPL": 350, "distEU": 1180, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Lyon": { "distPL": 500, "distEU": 2800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Cannes/Nicea": { "distPL": 500, "distEU": 3200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Tuluza": { "distPL": 500, "distEU": 3500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Mediolan": { "distPL": 500, "distEU": 2000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Rzym": { "distPL": 500, "distEU": 3000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Barcelona": { "distPL": 500, "distEU": 4200, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Madryt": { "distPL": 500, "distEU": 4900, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sewilla": { "distPL": 500, "distEU": 5800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Lizbona": { "distPL": 500, "distEU": 5900, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Genewa": { "distPL": 500, "distEU": 1800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Bazylea": { "distPL": 500, "distEU": 1500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Londyn": { "distPL": 350, "distEU": 1250, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Liverpool": { "distPL": 500, "distEU": 3100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Manchester": { "distPL": 500, "distEU": 3000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Amsterdam": { "distPL": 350, "distEU": 700, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Bruksela": { "distPL": 500, "distEU": 1500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Kopenhaga": { "distPL": 600, "distEU": 800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sztokholm": { "distPL": 10, "distEU": 1050, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Wiedeń": { "distPL": 500, "distEU": 800, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Praga": { "distPL": 500, "distEU": 400, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Budapeszt": { "distPL": 500, "distEU": 1000, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Sofia": { "distPL": 500, "distEU": 2500, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Stuttgart": { "distPL": 350, "distEU": 700, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Essen": { "distPL": 350, "distEU": 800, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Strasburg": { "distPL": 350, "distEU": 900, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Bordeaux": { "distPL": 350, "distEU": 1800, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Rotterdam": { "distPL": 350, "distEU": 850, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Antwerpia": { "distPL": 350, "distEU": 950, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Oslo": { "distPL": 10, "distEU": 1100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Walencja": { "distPL": 350, "distEU": 2550, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Turyn": { "distPL": 500, "distEU": 2100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Bratysława": { "distPL": 500, "distEU": 850, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Brno": { "distPL": 500, "distEU": 700, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Wrocław": { "distPL": 450, "distEU": 0, "mytoFTL": 220, "mytoSolo": 220, "mytoBus": 110 },
-            "Kraków": { "distPL": 600, "distEU": 0, "mytoFTL": 300, "mytoSolo": 300, "mytoBus": 150 }
+            "Poznań": {
+                "distPL": 330,
+                "distEU": 0,
+                "mytoFTL": 280,
+                "mytoSolo": 280,
+                "mytoBus": 140
+            },
+            "Warszawa": {
+                "distPL": 350,
+                "distEU": 0,
+                "mytoFTL": 250,
+                "mytoSolo": 250,
+                "mytoBus": 125
+            },
+            "Kielce": {
+                "distPL": 550,
+                "distEU": 0,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Gorzów Wielkopolski": {
+                "distPL": 350,
+                "distEU": 0,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Berlin": {
+                "distPL": 350,
+                "distEU": 180,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Lipsk": {
+                "distPL": 500,
+                "distEU": 600,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Hamburg": {
+                "distPL": 350,
+                "distEU": 350,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Hannover": {
+                "distPL": 350,
+                "distEU": 400,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Monachium": {
+                "distPL": 500,
+                "distEU": 1200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Frankfurt nad Menem": {
+                "distPL": 500,
+                "distEU": 1200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Norymberga": {
+                "distPL": 500,
+                "distEU": 1000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Kolonia/Dusseldorf": {
+                "distPL": 500,
+                "distEU": 1400,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Paryż": {
+                "distPL": 350,
+                "distEU": 1180,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Lyon": {
+                "distPL": 500,
+                "distEU": 2800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Cannes/Nicea": {
+                "distPL": 500,
+                "distEU": 3200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Tuluza": {
+                "distPL": 500,
+                "distEU": 3500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Mediolan": {
+                "distPL": 500,
+                "distEU": 2000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Rzym": {
+                "distPL": 500,
+                "distEU": 3000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Barcelona": {
+                "distPL": 500,
+                "distEU": 4200,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Madryt": {
+                "distPL": 500,
+                "distEU": 4900,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sewilla": {
+                "distPL": 500,
+                "distEU": 5800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Lizbona": {
+                "distPL": 500,
+                "distEU": 5900,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Genewa": {
+                "distPL": 500,
+                "distEU": 1800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Bazylea": {
+                "distPL": 500,
+                "distEU": 1500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Londyn": {
+                "distPL": 350,
+                "distEU": 1250,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Liverpool": {
+                "distPL": 500,
+                "distEU": 3100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Manchester": {
+                "distPL": 500,
+                "distEU": 3000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Amsterdam": {
+                "distPL": 350,
+                "distEU": 700,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Bruksela": {
+                "distPL": 500,
+                "distEU": 1500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Kopenhaga": {
+                "distPL": 600,
+                "distEU": 800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sztokholm": {
+                "distPL": 10,
+                "distEU": 1050,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Wiedeń": {
+                "distPL": 500,
+                "distEU": 800,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Praga": {
+                "distPL": 500,
+                "distEU": 400,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Budapeszt": {
+                "distPL": 500,
+                "distEU": 1000,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Sofia": {
+                "distPL": 500,
+                "distEU": 2500,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Stuttgart": {
+                "distPL": 350,
+                "distEU": 700,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Essen": {
+                "distPL": 350,
+                "distEU": 800,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Strasburg": {
+                "distPL": 350,
+                "distEU": 900,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Bordeaux": {
+                "distPL": 350,
+                "distEU": 1800,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Rotterdam": {
+                "distPL": 350,
+                "distEU": 850,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Antwerpia": {
+                "distPL": 350,
+                "distEU": 950,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Oslo": {
+                "distPL": 10,
+                "distEU": 1100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Walencja": {
+                "distPL": 350,
+                "distEU": 2550,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Turyn": {
+                "distPL": 500,
+                "distEU": 2100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Bratysława": {
+                "distPL": 500,
+                "distEU": 850,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Brno": {
+                "distPL": 500,
+                "distEU": 700,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Wrocław": {
+                "distPL": 450,
+                "distEU": 0,
+                "mytoFTL": 220,
+                "mytoSolo": 220,
+                "mytoBus": 110
+            },
+            "Kraków": {
+                "distPL": 600,
+                "distEU": 0,
+                "mytoFTL": 300,
+                "mytoSolo": 300,
+                "mytoBus": 150
+            }
         },
         "Gorzów Wielkopolski": {
-            "Poznań": { "distPL": 160, "distEU": 0, "mytoFTL": 100, "mytoSolo": 100, "mytoBus": 50 },
-            "Warszawa": { "distPL": 470, "distEU": 0, "mytoFTL": 350, "mytoSolo": 350, "mytoBus": 175 },
-            "Gdańsk": { "distPL": 350, "distEU": 0, "mytoFTL": 200, "mytoSolo": 200, "mytoBus": 100 },
-            "Berlin": { "distPL": 50, "distEU": 100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Lipsk": { "distPL": 80, "distEU": 250, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Hannover": { "distPL": 80, "distEU": 300, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Paryż": { "distPL": 50, "distEU": 1050, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Lyon": { "distPL": 80, "distEU": 1350, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Amsterdam": { "distPL": 50, "distEU": 600, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Bruksela": { "distPL": 50, "distEU": 700, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Londyn": { "distPL": 50, "distEU": 1100, "mytoFTL": 0, "mytoSolo": 0, "mytoBus": 0 },
-            "Barcelona": { "distPL": 120, "distEU": 2000, "mytoFTL": 50, "mytoSolo": 50, "mytoBus": 25 }
+            "Poznań": {
+                "distPL": 160,
+                "distEU": 0,
+                "mytoFTL": 100,
+                "mytoSolo": 100,
+                "mytoBus": 50
+            },
+            "Warszawa": {
+                "distPL": 470,
+                "distEU": 0,
+                "mytoFTL": 350,
+                "mytoSolo": 350,
+                "mytoBus": 175
+            },
+            "Gdańsk": {
+                "distPL": 350,
+                "distEU": 0,
+                "mytoFTL": 200,
+                "mytoSolo": 200,
+                "mytoBus": 100
+            },
+            "Berlin": {
+                "distPL": 50,
+                "distEU": 100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Lipsk": {
+                "distPL": 80,
+                "distEU": 250,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Hannover": {
+                "distPL": 80,
+                "distEU": 300,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Paryż": {
+                "distPL": 50,
+                "distEU": 1050,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Lyon": {
+                "distPL": 80,
+                "distEU": 1350,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Amsterdam": {
+                "distPL": 50,
+                "distEU": 600,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Bruksela": {
+                "distPL": 50,
+                "distEU": 700,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Londyn": {
+                "distPL": 50,
+                "distEU": 1100,
+                "mytoFTL": 0,
+                "mytoSolo": 0,
+                "mytoBus": 0
+            },
+            "Barcelona": {
+                "distPL": 120,
+                "distEU": 2000,
+                "mytoFTL": 50,
+                "mytoSolo": 50,
+                "mytoBus": 25
+            }
         }
     }
 }
