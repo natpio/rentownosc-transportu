@@ -601,11 +601,11 @@
                 "mytoBus": 150.0
             },
             "Budapeszt": {
-                "distPL": 500,
-                "distEU": 1000,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 399,
+                "distEU": 315,
+                "mytoFTL": 115.35,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Sofia": {
                 "distPL": 500,
