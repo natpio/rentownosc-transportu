@@ -608,11 +608,11 @@
                 "mytoBus": 0.0
             },
             "Sofia": {
-                "distPL": 500,
-                "distEU": 2500,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 403,
+                "distEU": 1065,
+                "mytoFTL": 278.47,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Stuttgart": {
                 "distPL": 470,
