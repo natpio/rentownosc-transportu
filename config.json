@@ -708,11 +708,11 @@
         },
         "Gdańsk": {
             "Poznań": {
-                "distPL": 330,
+                "distPL": 337,
                 "distEU": 0,
-                "mytoFTL": 280,
-                "mytoSolo": 280,
-                "mytoBus": 140
+                "mytoFTL": 4.19,
+                "mytoSolo": 280.0,
+                "mytoBus": 140.0
             },
             "Warszawa": {
                 "distPL": 350,
