@@ -743,11 +743,11 @@
                 "mytoBus": 100.0
             },
             "Lipsk": {
-                "distPL": 500,
-                "distEU": 600,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 421,
+                "distEU": 205,
+                "mytoFTL": 75.75,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Hamburg": {
                 "distPL": 350,
