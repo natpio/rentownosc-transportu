@@ -715,11 +715,11 @@
                 "mytoBus": 140.0
             },
             "Warszawa": {
-                "distPL": 350,
+                "distPL": 355,
                 "distEU": 0,
-                "mytoFTL": 250,
-                "mytoSolo": 250,
-                "mytoBus": 125
+                "mytoFTL": 16.03,
+                "mytoSolo": 250.0,
+                "mytoBus": 125.0
             },
             "Kielce": {
                 "distPL": 550,
