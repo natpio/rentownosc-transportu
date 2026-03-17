@@ -1023,11 +1023,11 @@
                 "mytoBus": 0.0
             },
             "Brno": {
-                "distPL": 500,
-                "distEU": 700,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 560,
+                "distEU": 187,
+                "mytoFTL": 39.14,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Wrocław": {
                 "distPL": 455,
