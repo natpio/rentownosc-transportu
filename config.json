@@ -841,11 +841,11 @@
                 "mytoBus": 0
             },
             "Madryt": {
-                "distPL": 500,
-                "distEU": 4900,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 421,
+                "distEU": 1911,
+                "mytoFTL": 584.05,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Sewilla": {
                 "distPL": 377,
