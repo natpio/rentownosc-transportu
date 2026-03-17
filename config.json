@@ -757,11 +757,11 @@
                 "mytoBus": 100
             },
             "Hannover": {
-                "distPL": 350,
-                "distEU": 400,
-                "mytoFTL": 200,
-                "mytoSolo": 200,
-                "mytoBus": 100
+                "distPL": 421,
+                "distEU": 353,
+                "mytoFTL": 125.87,
+                "mytoSolo": 200.0,
+                "mytoBus": 100.0
             },
             "Monachium": {
                 "distPL": 500,
