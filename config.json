@@ -1009,11 +1009,11 @@
                 "mytoBus": 100
             },
             "Turyn": {
-                "distPL": 500,
-                "distEU": 2100,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 421,
+                "distEU": 1175,
+                "mytoFTL": 565.05,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Bratysława": {
                 "distPL": 500,
