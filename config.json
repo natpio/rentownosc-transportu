@@ -953,11 +953,11 @@
                 "mytoBus": 0
             },
             "Stuttgart": {
-                "distPL": 350,
-                "distEU": 700,
-                "mytoFTL": 200,
-                "mytoSolo": 200,
-                "mytoBus": 100
+                "distPL": 421,
+                "distEU": 675,
+                "mytoFTL": 233.7,
+                "mytoSolo": 200.0,
+                "mytoBus": 100.0
             },
             "Essen": {
                 "distPL": 350,
