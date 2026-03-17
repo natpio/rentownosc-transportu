@@ -1037,11 +1037,11 @@
                 "mytoBus": 110.0
             },
             "Kraków": {
-                "distPL": 600,
+                "distPL": 556,
                 "distEU": 0,
-                "mytoFTL": 300,
-                "mytoSolo": 300,
-                "mytoBus": 150
+                "mytoFTL": 52.29,
+                "mytoSolo": 300.0,
+                "mytoBus": 150.0
             }
         },
         "Gorzów Wielkopolski": {
