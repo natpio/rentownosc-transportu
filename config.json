@@ -918,11 +918,11 @@
                 "mytoBus": 0
             },
             "Sztokholm": {
-                "distPL": 10,
-                "distEU": 1050,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 12,
+                "distEU": 647,
+                "mytoFTL": 15.04,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Wiedeń": {
                 "distPL": 500,
