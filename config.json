@@ -806,11 +806,11 @@
                 "mytoBus": 0
             },
             "Cannes/Nicea": {
-                "distPL": 500,
-                "distEU": 3200,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 421,
+                "distEU": 1415,
+                "mytoFTL": 653.7,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Tuluza": {
                 "distPL": 500,
