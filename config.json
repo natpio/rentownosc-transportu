@@ -862,11 +862,11 @@
                 "mytoBus": 0
             },
             "Genewa": {
-                "distPL": 500,
-                "distEU": 1800,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 421,
+                "distEU": 1123,
+                "mytoFTL": 577.57,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Bazylea": {
                 "distPL": 500,
