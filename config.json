@@ -855,11 +855,11 @@
                 "mytoBus": 0.0
             },
             "Lizbona": {
-                "distPL": 500,
-                "distEU": 5900,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 421,
+                "distEU": 2834,
+                "mytoFTL": 596.33,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Genewa": {
                 "distPL": 421,
