@@ -685,11 +685,11 @@
                 "mytoBus": 140
             },
             "Brno": {
-                "distPL": 450,
-                "distEU": 250,
-                "mytoFTL": 300,
-                "mytoSolo": 300,
-                "mytoBus": 150
+                "distPL": 372,
+                "distEU": 186,
+                "mytoFTL": 33.31,
+                "mytoSolo": 300.0,
+                "mytoBus": 150.0
             },
             "Wrocław": {
                 "distPL": 363,
