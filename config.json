@@ -827,11 +827,11 @@
                 "mytoBus": 0.0
             },
             "Rzym": {
-                "distPL": 500,
-                "distEU": 3000,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 588,
+                "distEU": 1224,
+                "mytoFTL": 339.73,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Barcelona": {
                 "distPL": 500,
