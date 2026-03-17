@@ -1016,11 +1016,11 @@
                 "mytoBus": 0.0
             },
             "Bratysława": {
-                "distPL": 500,
-                "distEU": 850,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 559,
+                "distEU": 310,
+                "mytoFTL": 73.07,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Brno": {
                 "distPL": 500,
