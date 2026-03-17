@@ -678,11 +678,11 @@
                 "mytoBus": 190.0
             },
             "Bratysława": {
-                "distPL": 400,
-                "distEU": 350,
-                "mytoFTL": 280,
-                "mytoSolo": 280,
-                "mytoBus": 140
+                "distPL": 357,
+                "distEU": 286,
+                "mytoFTL": 102.0,
+                "mytoSolo": 280.0,
+                "mytoBus": 140.0
             },
             "Brno": {
                 "distPL": 372,
