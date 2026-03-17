@@ -771,11 +771,11 @@
                 "mytoBus": 0.0
             },
             "Frankfurt nad Menem": {
-                "distPL": 500,
-                "distEU": 1200,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 421,
+                "distEU": 590,
+                "mytoFTL": 206.17,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Norymberga": {
                 "distPL": 500,
