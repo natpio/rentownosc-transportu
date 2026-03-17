@@ -974,11 +974,11 @@
                 "mytoBus": 100
             },
             "Bordeaux": {
-                "distPL": 350,
-                "distEU": 1800,
-                "mytoFTL": 200,
-                "mytoSolo": 200,
-                "mytoBus": 100
+                "distPL": 377,
+                "distEU": 1761,
+                "mytoFTL": 369.96,
+                "mytoSolo": 200.0,
+                "mytoBus": 100.0
             },
             "Rotterdam": {
                 "distPL": 350,
