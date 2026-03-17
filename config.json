@@ -981,11 +981,11 @@
                 "mytoBus": 100.0
             },
             "Rotterdam": {
-                "distPL": 350,
-                "distEU": 850,
-                "mytoFTL": 200,
-                "mytoSolo": 200,
-                "mytoBus": 100
+                "distPL": 421,
+                "distEU": 760,
+                "mytoFTL": 211.36,
+                "mytoSolo": 200.0,
+                "mytoBus": 100.0
             },
             "Antwerpia": {
                 "distPL": 421,
