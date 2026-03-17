@@ -813,11 +813,11 @@
                 "mytoBus": 0.0
             },
             "Tuluza": {
-                "distPL": 500,
-                "distEU": 3500,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 377,
+                "distEU": 1779,
+                "mytoFTL": 494.36,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Mediolan": {
                 "distPL": 421,
