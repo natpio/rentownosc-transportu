@@ -925,11 +925,11 @@
                 "mytoBus": 0.0
             },
             "Wiedeń": {
-                "distPL": 500,
-                "distEU": 800,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 578,
+                "distEU": 296,
+                "mytoFTL": 88.17,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Praga": {
                 "distPL": 500,
