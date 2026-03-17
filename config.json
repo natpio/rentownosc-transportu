@@ -722,11 +722,11 @@
                 "mytoBus": 125.0
             },
             "Kielce": {
-                "distPL": 550,
+                "distPL": 475,
                 "distEU": 0,
-                "mytoFTL": 350,
-                "mytoSolo": 350,
-                "mytoBus": 175
+                "mytoFTL": 45.47,
+                "mytoSolo": 350.0,
+                "mytoBus": 175.0
             },
             "Gorzów Wielkopolski": {
                 "distPL": 328,
