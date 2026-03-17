@@ -869,11 +869,11 @@
                 "mytoBus": 0.0
             },
             "Bazylea": {
-                "distPL": 500,
-                "distEU": 1500,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 514,
+                "distEU": 823,
+                "mytoFTL": 312.4,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Londyn": {
                 "distPL": 350,
