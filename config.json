@@ -932,11 +932,11 @@
                 "mytoBus": 0.0
             },
             "Praga": {
-                "distPL": 500,
-                "distEU": 400,
-                "mytoFTL": 0,
-                "mytoSolo": 0,
-                "mytoBus": 0
+                "distPL": 571,
+                "distEU": 138,
+                "mytoFTL": 70.54,
+                "mytoSolo": 0.0,
+                "mytoBus": 0.0
             },
             "Budapeszt": {
                 "distPL": 630,
